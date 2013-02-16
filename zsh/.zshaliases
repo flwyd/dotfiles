@@ -1,0 +1,11 @@
+# Favorite options
+alias df='df -h'
+alias dir='ls =lah'
+alias ls='ls --color=auto'
+
+# Commands that should ignore wildcards
+alias curl='noglob curl'
+alias wget='noglob wget'
+
+# Git aliases
+alias gstat='git status -sb'
