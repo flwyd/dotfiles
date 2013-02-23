@@ -1,6 +1,6 @@
 # Favorite options
 alias df='df -h'
-alias dir='ls =lah'
+alias dir='ls -lah'
 alias ls='ls --color=auto'
 
 # Commands that should ignore wildcards
