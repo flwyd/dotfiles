@@ -5,6 +5,8 @@ call vundle#rc()
 
 " self-manage vundle
 Bundle 'gmarik/vundle'
+" Go syntax, commands, etc.
+Bundle 'jnwhiteh/vim-golang'
 " \\<motion> to highlight jump options
 Bundle 'Lokaltog/vim-easymotion'
 " \be \bs \bv for buffer list
@@ -13,6 +15,10 @@ Bundle 'c9s/bufexplorer'
 Bundle 'msanders/snipmate.vim'
 " highlight enclosing tag
 Bundle 'Valloric/MatchTagAlways'
+" :A alt file :AS split :AN cycle :IH \ih cursor \is alt under cursor
+Bundle 'a.vim'
+" Enhanced directory navigation
+Bundle 'scrooloose/nerdtree'
 " comment commands \ci (invert) \cc (line) \cm (block) \c  (toggle) \cy (yank)..
 Bundle 'scrooloose/nerdcommenter'
 " readline mappings in insert and command mode

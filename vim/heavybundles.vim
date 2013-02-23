@@ -4,6 +4,8 @@
 Bundle 'taglist.vim'
 " :Bck [options] pattern to ack the tree, default <cword>
 Bundle 'Bck'
+" :GundoToggle tree replacement for :undolist
+Bundle 'Gundo'
 " ConqueTerm command output in a buffer
 Bundle 'rson/vim-conque'
 " ShellTerminal, Shell asynchronous comand output to a window
