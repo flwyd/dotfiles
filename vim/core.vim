@@ -30,6 +30,14 @@ set pastetoggle=<F2>
 " make non-active splits less prominent
 hi StatusLineNC ctermbg=Gray guibg=Gray
 
+" Make Y work like D and C, use yy for vi behavior
+map Y y$
+
+" Allow switching vim windows and deleting a word when SSH is in a Chrome tab
+" C-@ can be hit as ctrl-`; it normally does a repeat insert at start of imode
+map <C-@> <C-W>
+map! <C-@> <C-W>
+
 " change directory to current file location
 command! Cdf cd %:h
 
