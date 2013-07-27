@@ -1,7 +1,14 @@
 # Favorite options
 alias df='df -h'
 alias dir='ls -lah'
-alias ls='ls --color=auto'
+# Figure out the ls color incantation
+if ls --color -d / >/dev/null 2>&1 ; then
+  # GNU style
+  alias ls='ls --color=auto'
+elif ls -G -d / >/dev/null 2>&1 ; then
+  # BSD style
+  alias ls='ls -G'
+fi
 
 # Commands that should ignore wildcards
 alias curl='noglob curl'
