@@ -50,8 +50,6 @@ PROMPT=$'%B%F{red}%?%f%b %F{green}%T%f %B%F{magenta}%!%f%b%# '
 RPROMPT='%S%4~%s'
 WORDCHARS=${WORDCHARS//[&=\/;\!#%.-]}
 bindkey -e
-# Make ChromeOS alt-backspace work like it should
-bindkey '\e[3~' backward-kill-word
 # Automatic functions
 typeset -ga chpwd_functions
 typeset -ga precmd_functions
