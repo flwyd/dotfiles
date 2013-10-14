@@ -21,6 +21,9 @@ set wildmode=longest,full
 set wildmenu
 " C-A/C-X can increment letters
 set nrformats+=alpha
+" Delete comment markers when joining lines
+" Not in vim 73
+"set formatoptions+=j
 " automatically reload after external changes in clean buffers
 set autoread
 
@@ -28,7 +31,7 @@ set autoread
 set pastetoggle=<F2>
 
 " make non-active splits less prominent
-hi StatusLineNC ctermbg=Gray guibg=Gray
+"hi StatusLineNC ctermbg=Gray guibg=Gray
 
 " Make Y work like D and C, use yy for vi behavior
 map Y y$
@@ -58,6 +61,8 @@ nnoremap <Leader>dD :NERDTree ..<CR>
 nnoremap <Leader>dx :NERDTreeToggle<CR>
 " edit file in current file's directory
 nnoremap <Leader>de :e %:h/
+" toggle showing status ine always or only with splits
+nnoremap <Leader>ds :let &laststatus=(2 == &laststatus ? 1 : 2)<CR>
 
 " Load matchit.vim, but only if the user hasn't installed a newer version.
 if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''

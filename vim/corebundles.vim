@@ -48,3 +48,11 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-characterize'
 " markdown syntax
 Bundle 'tpope/vim-markdown'
+" fancy statusline
+Bundle 'bling/vim-airline'
+" CSV support
+Bundle 'chrisbra/csv.vim'
+" Show positional ctags
+Bundle 'majutsushi/tagbar'
+" Signs/highliting for lines changed from version control
+Bundle 'mhinz/vim-signify'
