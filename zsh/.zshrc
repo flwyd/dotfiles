@@ -45,6 +45,8 @@ setopt \
   noprompt_sp \
   short_loops
 
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
 # Command line editing and prompting
 PROMPT=$'%B%F{red}%?%f%b %F{green}%T%f %B%F{magenta}%!%f%b%# '
 RPROMPT='%S%4~%s'
