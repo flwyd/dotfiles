@@ -36,6 +36,9 @@ set pastetoggle=<F2>
 " Make Y work like D and C, use yy for vi behavior
 map Y y$
 
+" Quickly turn off search highlights
+nnoremap <Leader>/ :nohl<CR>
+
 " Allow switching vim windows and deleting a word when SSH is in a Chrome tab
 " C-@ can be hit as ctrl-`; it normally does a repeat insert at start of imode
 map <C-@> <C-W>
@@ -61,8 +64,18 @@ nnoremap <Leader>dD :NERDTree ..<CR>
 nnoremap <Leader>dx :NERDTreeToggle<CR>
 " edit file in current file's directory
 nnoremap <Leader>de :e %:h/
-" toggle showing status ine always or only with splits
+" toggle showing status line always or only with splits
 nnoremap <Leader>ds :let &laststatus=(2 == &laststatus ? 1 : 2)<CR>
+
+" Settings for airline plugin
+" Don't show signs for git changes; turn on with \gt
+let g:signify_disable_by_default = 1
+" Only show git change info if there is any
+let g:airline#extensions#hunks#non_zero_only = 1
+" Show the column name when editing a CSV file
+let g:airline#extensions#csv#column_display = 'Name'
+" Only show file encoding and format if it's not utf-8[unix]
+call airline#parts#define_condition('ffenc', '\&fileformat != "unix" || \&fileencoding != "utf-8"')
 
 " Load matchit.vim, but only if the user hasn't installed a newer version.
 if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
