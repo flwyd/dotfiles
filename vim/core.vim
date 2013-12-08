@@ -33,39 +33,12 @@ set pastetoggle=<F2>
 " make non-active splits less prominent
 "hi StatusLineNC ctermbg=Gray guibg=Gray
 
-" Make Y work like D and C, use yy for vi behavior
-map Y y$
-
-" Quickly turn off search highlights
-nnoremap <Leader>/ :nohl<CR>
-
-" Allow switching vim windows and deleting a word when SSH is in a Chrome tab
-" C-@ can be hit as ctrl-`; it normally does a repeat insert at start of imode
-map <C-@> <C-W>
-map! <C-@> <C-W>
-
 " change directory to current file location
 command! Cdf cd %:h
 
 " compare with saved version
 command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
     \ | wincmd p | diffthis
-
-" Directory navigation shortcuts
-" browse directory of current file
-nnoremap <Leader>df :NERDTree %<CR>
-" browse parent directory of current file
-nnoremap <Leader>du :NERDTree %:h:h<CR>
-" browse current working directory
-nnoremap <Leader>dd :NERDTree .<CR>
-" browse parent of current working directory
-nnoremap <Leader>dD :NERDTree ..<CR>
-" hide/show directory browser
-nnoremap <Leader>dx :NERDTreeToggle<CR>
-" edit file in current file's directory
-nnoremap <Leader>de :e %:h/
-" toggle showing status line always or only with splits
-nnoremap <Leader>ds :let &laststatus=(2 == &laststatus ? 1 : 2)<CR>
 
 " Settings for airline plugin
 " Don't show signs for git changes; turn on with \gt
