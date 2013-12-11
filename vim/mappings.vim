@@ -36,5 +36,4 @@ nnoremap <Leader>dS :let &laststatus=(2 == &laststatus ? 1 : 2)<CR>
 " Don't append <CR> so the command can be edited (like prepending %).
 
 " \s: to convert Ruby hash literals from 1.8 to 1.9 syntax.
-nnoremap <Leader>s: :s/\:\([A-Za-z_][A-Za-z0-9_?]*\)\s*=>/\1:/g
-vnoremap <Leader>s: :'<,'>s/\:\([A-Za-z_][A-Za-z0-9_?]*\)\s*=>/\1:/g
+noremap <Leader>s: :s/\:\([A-Za-z_][A-Za-z0-9_?]*\)\s*=>/\1:/g
