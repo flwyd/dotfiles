@@ -39,3 +39,6 @@ nnoremap <Leader>dS :let &laststatus=(2 == &laststatus ? 1 : 2)<CR>
 
 " \s: to convert Ruby hash literals from 1.8 to 1.9 syntax.
 noremap <Leader>s: :s/\:\([A-Za-z_][A-Za-z0-9_?]*\)\s*=>/\1:/g
+" \s| to convert pipe delimited, fixed width columnar output to tabs and delete
+" table border lines like +----+----+
+noremap <Leader>s<Bar> :%s/^<Bar> // <Bar> %s/ <Bar>$// <Bar> %s/ \+<Bar> \+/<Tab>/g <Bar> g/^+\(-\++\)\+$/d
