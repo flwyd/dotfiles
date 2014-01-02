@@ -28,6 +28,8 @@ nnoremap <Leader>dx :NERDTreeToggle<CR>
 nnoremap <Leader>de :e %:h/
 " split file in current file's directory
 nnoremap <Leader>ds :sp %:h/
+" read file in the current file's directory
+nnoremap <Leader>dr :r %:h/
 " toggle showing status line always or only with splits
 nnoremap <Leader>dS :let &laststatus=(2 == &laststatus ? 1 : 2)<CR>
 
