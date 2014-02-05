@@ -4,7 +4,7 @@
 map Y y$
 
 " Quickly turn off search highlights
-nnoremap <Leader>/ :nohl<CR>
+nnoremap <Silent> <Leader>/ :nohl<CR>
 
 " Allow switching vim windows and deleting a word when SSH is in a Chrome tab
 " C-@ can be hit as ctrl-`; it normally does a repeat insert at start of imode
@@ -42,3 +42,8 @@ noremap <Leader>s: :s/\:\([A-Za-z_][A-Za-z0-9_?]*\)\s*=>/\1:/g
 " \s| to convert pipe delimited, fixed width columnar output to tabs and delete
 " table border lines like +----+----+
 noremap <Leader>s<Bar> :%s/^<Bar> // <Bar> %s/ <Bar>$// <Bar> %s/ \+<Bar> \+/<Tab>/g <Bar> g/^+\(-\++\)\+$/d
+" \s' and \s" to convert "smart" (left/right) quotes to "dumb" quotes
+" U+2018-9 is LEFT/RIGHT SINGLE QUOTATION MARK, 201A-B is LOW-9/HIGH-REVERSED-9
+noremap <Leader>s' :s/[\u2018-\u201B]/'/g
+" U+201C-D is LEFT/RIGHT DOUBLE QUOTATION MARK, 201E-F is LOW-9/HIGH-REVERSED-9
+noremap <Leader>s" :s/[\u201C-\u201F]/"/g

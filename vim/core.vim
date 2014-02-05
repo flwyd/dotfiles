@@ -26,6 +26,10 @@ set nrformats+=alpha
 "set formatoptions+=j
 " automatically reload after external changes in clean buffers
 set autoread
+" Set color column to one past text width
+if exists('+colorcolumn')
+  set colorcolumn=+1
+endif
 
 " faster than :set paste, insert, :set nopaste
 set pastetoggle=<F2>
