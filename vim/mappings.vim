@@ -4,7 +4,7 @@
 map Y y$
 
 " Quickly turn off search highlights
-nnoremap <Silent> <Leader>/ :nohl<CR>
+nnoremap <silent> <Leader>/ :nohl<CR>
 
 " Allow switching vim windows and deleting a word when SSH is in a Chrome tab
 " C-@ can be hit as ctrl-`; it normally does a repeat insert at start of imode
