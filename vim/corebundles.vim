@@ -56,3 +56,7 @@ Bundle 'chrisbra/csv.vim'
 Bundle 'majutsushi/tagbar'
 " Signs/highliting for lines changed from version control
 Bundle 'mhinz/vim-signify'
+" HTML5 omnicomplete, indent, and syntax
+Bundle 'othree/html5.vim'
+" JSON syntax and error highlighting
+Bundle 'elzr/vim-json'
