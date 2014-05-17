@@ -48,6 +48,8 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-characterize'
 " markdown syntax
 Bundle 'tpope/vim-markdown'
+" C-A, C-X to increment, decrement a column of numbers
+Bundle 'triglav/vim-visual-increment'
 " fancy statusline
 Bundle 'bling/vim-airline'
 " CSV support
