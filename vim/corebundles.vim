@@ -17,6 +17,8 @@ Bundle 'msanders/snipmate.vim'
 Bundle 'Valloric/MatchTagAlways'
 " :A alt file :AS split :AN cycle :IH \ih cursor \is alt under cursor
 Bundle 'a.vim'
+" sxy like fx for two chars, multiline; S backwards; dzxy as operator
+Bundle 'justinmk/vim-sneak'
 " Enhanced directory navigation
 Bundle 'scrooloose/nerdtree'
 " comment commands \ci (invert) \cc (line) \cm (block) \c  (toggle) \cy (yank)..
@@ -30,7 +32,8 @@ Bundle 'tpope/vim-repeat'
 " crs crm crc cru coerce snake, mixed, camel, upper
 Bundle 'tpope/vim-abolish'
 " fC-U to jump to upper case, fC-W fC-E move within camel and snake case words
-Bundle 'tpope/vim-flatfoot'
+" Disabled so sneak works with ;/,
+" Bundle 'tpope/vim-flatfoot'
 " C-A/C-X to in/decrement times, ranges, etc.
 Bundle 'tpope/vim-speeddating'
 " automatically insert end keywords for shell, vim, ruby, etc.
@@ -50,6 +53,10 @@ Bundle 'tpope/vim-characterize'
 Bundle 'tpope/vim-markdown'
 " C-A, C-X to increment, decrement a column of numbers
 Bundle 'triglav/vim-visual-increment'
+" gS to split single-line constructs to multiline, gJ to join them
+Bundle 'AndrewRadev/splitjoin.vim'
+" da, to delete comma list item, cil' to change in last quote, etc.
+Bundle 'wellle/targets.vim'
 " fancy statusline
 Bundle 'bling/vim-airline'
 " CSV support
