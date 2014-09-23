@@ -28,6 +28,7 @@ setopt \
   auto_menu \
   auto_pushd \
   beep \
+  brace_ccl \
   check_jobs \
   noclobber \
   complete_in_word \
