@@ -52,6 +52,11 @@ PROMPT=$'%B%F{red}%?%f%b %F{green}%T%f %B%F{magenta}%!%f%b%# '
 RPROMPT='%S%4~%s'
 WORDCHARS=${WORDCHARS//[&=\/;\!#%.-]}
 bindkey -e
+if [[ $OSTYPE =~ darwin ]]; then
+  # forwards delete on MacOS X
+  bindkey "^[[3~" delete-char
+fi
+
 # Automatic functions
 typeset -ga chpwd_functions
 typeset -ga precmd_functions
