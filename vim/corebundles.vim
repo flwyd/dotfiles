@@ -57,6 +57,8 @@ Bundle 'triglav/vim-visual-increment'
 Bundle 'AndrewRadev/splitjoin.vim'
 " da, to delete comma list item, cil' to change in last quote, etc.
 Bundle 'wellle/targets.vim'
+" Show number of hits when searching
+Bundle 'google/vim-searchindex'
 " fancy statusline
 Bundle 'bling/vim-airline'
 " CSV support
