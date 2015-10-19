@@ -34,6 +34,13 @@ nnoremap <Leader>dr :r %:h/
 nnoremap <Leader>dS :let &laststatus=(2 == &laststatus ? 1 : 2)<CR>
 
 
+""" \w mappings for window management
+" Open taglist
+nnoremap <Leader>wt :TlistToggle
+" Open tagbar
+nnoremap <Leader>wT :TagbarToggle
+
+
 """ \s mappings to perform common substitutions
 " Don't append <CR> so the command can be edited (like prepending %).
 

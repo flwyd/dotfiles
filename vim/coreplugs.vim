@@ -18,6 +18,8 @@ Plug 'c9s/bufexplorer'
 Plug 'msanders/snipmate.vim'
 " highlight enclosing tag
 Plug 'Valloric/MatchTagAlways'
+" highlight current term, :QuickhlManualAdd pattern
+Plug 't9md/vim-quickhl'
 " :A alt file :AS split :AN cycle :IH \ih cursor \is alt under cursor
 Plug 'a.vim'
 " sxy like fx for two chars, multiline; S backwards; dzxy as operator
@@ -26,6 +28,8 @@ Plug 'justinmk/vim-sneak'
 Plug 'scrooloose/nerdtree'
 " comment commands \ci (invert) \cc (line) \cm (block) \c  (toggle) \cy (yank)..
 Plug 'scrooloose/nerdcommenter'
+" comment: gc{move} gcc toggle g<{move} g>{move} un/comment C-_C-_ insert
+Plug 'tomtom/tcomment_vim'
 " readline mappings in insert and command mode
 Plug 'tpope/vim-rsi'
 " let . repeate mapped commands
@@ -66,11 +70,13 @@ Plug 'google/vim-searchindex'
 Plug 'bling/vim-airline'
 " CSV support
 Plug 'chrisbra/csv.vim'
-" Show positional ctags
-Plug 'majutsushi/tagbar'
 " Signs/highliting for lines changed from version control
 Plug 'mhinz/vim-signify'
 " HTML5 omnicomplete, indent, and syntax
 Plug 'othree/html5.vim'
 " JSON syntax and error highlighting
 Plug 'elzr/vim-json'
+" Completion using tab/shift tab, literal tab with C-tab or C-v tab
+Plug 'ervandew/supertab'
+" Color nested parens in rotating colors
+Plug 'luochen1990/rainbow'

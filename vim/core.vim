@@ -44,6 +44,19 @@ command! Cdf cd %:h
 command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
     \ | wincmd p | diffthis
 
+" context-sensitive tab completion
+let g:SuperTabDefaultCompletionType = 'context'
+
+" highlight cursor word in cyan
+let g:quickhl_cword_enable_at_startup = 1
+let g:quickhl_cword_hl_command = 'QuickhlCword guibg=LightCyan ctermbg=LightCyan term=reverse'
+
+" configure rainbow parentheses
+let g:rainbow_active = 1
+let g:rainbow_conf = {
+      \ 'ctermfgs': ['Black', 'Gray', 'DarkRed', 'DarkBlue', 'Brown', 'DarkGreen', 'DarkMagenta', 'DarkCyan'],
+      \ }
+
 " Settings for airline plugin
 " Don't show signs for git changes; turn on with \gt
 let g:signify_disable_by_default = 1

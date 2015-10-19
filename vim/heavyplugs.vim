@@ -1,7 +1,9 @@
 " Plugins with major functionality or significant dependencies
 
-" TlistOpen for function/tag overview
+" TlistOpen for function/tag overview, requires exuberant ctags
 Plug 'taglist.vim'
+" Show positional tags, requires exuberant ctags
+Plug 'majutsushi/tagbar'
 " :Bck [options] pattern to ack the tree, default <cword>
 Plug 'mihaifm/Bck', { 'on': 'Bck' }
 " :GundoToggle tree replacement for :undolist
