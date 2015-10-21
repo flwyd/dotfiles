@@ -5,7 +5,7 @@
 "   autocmd VimEnter * PlugInstall | source $MYVIMRC
 " endif
 " call plug#begin('~/.vim/plugged')
-" source ~/dotfiles/vim/corebundles.vim
+" source ~/dotfiles/vim/coreplugs.vim
 " call plug#end()
 
 " Go syntax, commands, etc.
