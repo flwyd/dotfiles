@@ -62,10 +62,12 @@ let g:rainbow_conf = {
 let g:signify_disable_by_default = 1
 " Only show git change info if there is any
 let g:airline#extensions#hunks#non_zero_only = 1
+" Show buffers in tabline if only one tab is open
+let g:airline#extensions#tabline#enabled = 1
 " Show the column name when editing a CSV file
 let g:airline#extensions#csv#column_display = 'Name'
 " Only show file encoding and format if it's not utf-8[unix]
-call airline#parts#define_condition('ffenc', '\&fileformat != "unix" || \&fileencoding != "utf-8" \&\& \&fileencoding != ""')
+call airline#parts#define_condition('ffenc', '&fileformat != "unix" || &fileencoding != "utf-8" && &fileencoding != ""')
 
 " Load matchit.vim, but only if the user hasn't installed a newer version.
 if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
