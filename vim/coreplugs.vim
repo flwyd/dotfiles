@@ -14,8 +14,11 @@ Plug 'jnwhiteh/vim-golang', { 'for': 'go' }
 Plug 'Lokaltog/vim-easymotion'
 " \be \bs \bv for buffer list
 Plug 'c9s/bufexplorer'
-" template code insertion
-Plug 'msanders/snipmate.vim'
+" template code insertion and deps
+"Plug 'msanders/snipmate.vim'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
 " highlight enclosing tag
 Plug 'Valloric/MatchTagAlways'
 " highlight current term, :QuickhlManualAdd pattern
