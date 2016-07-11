@@ -36,9 +36,9 @@ nnoremap <Leader>dS :let &laststatus=(2 == &laststatus ? 1 : 2)<CR>
 
 """ \w mappings for window management
 " Open taglist
-nnoremap <Leader>wt :TlistToggle
+nnoremap <Leader>wt :TlistToggle<CR>
 " Open tagbar
-nnoremap <Leader>wT :TagbarToggle
+nnoremap <Leader>wT :TagbarToggle<CR>
 
 
 """ \s mappings to perform common substitutions

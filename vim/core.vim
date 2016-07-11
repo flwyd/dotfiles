@@ -21,9 +21,12 @@ set wildmode=longest,full
 set wildmenu
 " C-A/C-X can increment letters
 set nrformats+=alpha
+" Detect lists when formatting
+set formatoptions+=n
 " Delete comment markers when joining lines
-" Not in vim 73
-"set formatoptions+=j
+if v:version >= 704
+  set formatoptions+=j
+endif
 " automatically reload after external changes in clean buffers
 set autoread
 " Set color column to one past text width
