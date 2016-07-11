@@ -25,6 +25,8 @@ Plug 'Valloric/MatchTagAlways'
 Plug 't9md/vim-quickhl'
 " :A alt file :AS split :AN cycle :IH \ih cursor \is alt under cursor
 Plug 'a.vim'
+" :Bgrep /re/ search buffers, Agrep args, Wgrep windows
+Plug 'vim-scripts/buffergrep'
 " sxy like fx for two chars, multiline; S backwards; dzxy as operator
 Plug 'justinmk/vim-sneak'
 " Enhanced directory navigation
