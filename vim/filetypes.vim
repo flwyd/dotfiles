@@ -14,3 +14,8 @@ augroup Autoformat
   autocmd!
   autocmd BufWritePost *.go :silent Fmt
 augroup END
+
+augroup Spelling
+  autocmd!
+  autocmd FileType text\|markdown set spell spelllang=en_us
+augroup END
