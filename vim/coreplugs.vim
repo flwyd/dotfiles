@@ -85,3 +85,5 @@ Plug 'elzr/vim-json'
 Plug 'ervandew/supertab'
 " Color nested parens in rotating colors
 Plug 'luochen1990/rainbow'
+" Julia support plus LaTeXtoUnicode#Toggle() for \foo<tab>
+Plug 'JuliaEditorSupport/julia-vim'
