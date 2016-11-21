@@ -39,6 +39,9 @@ endif
 " faster than :set paste, insert, :set nopaste
 set pastetoggle=<F2>
 
+" F3 to format the buffer
+noremap <F3> :Autoformat<CR>
+
 " make non-active splits less prominent
 "hi StatusLineNC ctermbg=Gray guibg=Gray
 

@@ -10,6 +10,10 @@ Plug 'mihaifm/Bck', { 'on': 'Bck' }
 Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
 " ConqueTerm command output in a buffer
 Plug 'basepi/vim-conque', { 'on': 'ConqueTerm' }
+" Interactive command execution
+Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+" TypeScript omnicomplete, symbol jumps, make, etc; needs vimproc
+Plug 'Quramy/tsuquyomi'
 " ShellTerminal, Shell asynchronous comand output to a window
 " Needs vim 7.3, patchset 569
 if exists('*pyeval')

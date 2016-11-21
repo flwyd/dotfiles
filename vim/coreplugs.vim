@@ -88,3 +88,11 @@ Plug 'ervandew/supertab'
 Plug 'luochen1990/rainbow'
 " Julia support plus LaTeXtoUnicode#Toggle() for \foo<tab>
 Plug 'JuliaEditorSupport/julia-vim'
+" Read .editorconfig files, see editorconfig.org
+Plug 'editorconfig/editorconfig-vim'
+" :JsPreTmpl syntax highlighting inside JavaScript template strings
+Plug 'Quramy/vim-js-pretty-template'
+" TypeScript syntax
+Plug 'HerringtonDarkholme/yats.vim'
+" :Autoformat for various languages; needs external commands
+Plug 'Chiel92/vim-autoformat'

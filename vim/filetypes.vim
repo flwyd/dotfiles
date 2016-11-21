@@ -4,9 +4,10 @@ augroup AlternateMapping
   autocmd!
   autocmd FileType objc let g:alternateExtensions_h = "m"
   autocmd FileType objc let g:alternateExtensions_m = "h"
-  autocmd FileType html let g:alternateExtensions_html = "css,js"
-  autocmd FileType css let g:alternateExtensions_css = "html,htm,js"
+  autocmd FileType html let g:alternateExtensions_html = "css,js,ts"
+  autocmd FileType css let g:alternateExtensions_css = "html,htm,js,ts"
   autocmd FileType javascript let g:alternateExtensions_js = "html,htm,css"
+  autocmd FileType typescript let g:alternateExtensions_js = "html,htm,css"
   " TODO .java <-> Test.java etc, maybe compactcode/alternate
 augroup END
 
