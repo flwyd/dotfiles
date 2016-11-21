@@ -72,7 +72,8 @@ Plug 'wellle/targets.vim'
 " Show number of hits when searching
 Plug 'google/vim-searchindex'
 " fancy statusline
-Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 " CSV support
 Plug 'chrisbra/csv.vim'
 " Signs/highliting for lines changed from version control
