@@ -13,6 +13,8 @@ set smartindent
 set showmatch
 set incsearch
 set hlsearch
+" backspace over everything
+set backspace+=indent,eol,start
 " force case sensitivity with \C
 "set ignorecase
 set smartcase
