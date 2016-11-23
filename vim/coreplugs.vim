@@ -96,3 +96,5 @@ Plug 'Quramy/vim-js-pretty-template'
 Plug 'HerringtonDarkholme/yats.vim'
 " :Autoformat for various languages; needs external commands
 Plug 'Chiel92/vim-autoformat'
+" + to expand visual selection, _ to shrink
+Plug 'terryma/vim-expand-region'
