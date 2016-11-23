@@ -1,5 +1,7 @@
 filetype plugin indent on
 syntax on
+" Modeline is dangerous: http://seclists.org/oss-sec/2016/q4/506
+set nomodeline
 " status display
 set ruler
 set showcmd
