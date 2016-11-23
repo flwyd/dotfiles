@@ -67,9 +67,7 @@ let g:rainbow_conf = {
 
 " Settings for airline plugin
 " dark theme is hard to read on translucent windows
-if exists(':AirlineTheme') && !has('gui_running')
-  AirlineTheme papercolor
-endif
+let g:airline_theme = 'papercolor'
 " Don't show signs for git changes; turn on with \gt
 let g:signify_disable_by_default = 1
 " Only show git change info if there is any
