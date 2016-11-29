@@ -98,3 +98,5 @@ Plug 'HerringtonDarkholme/yats.vim'
 Plug 'Chiel92/vim-autoformat'
 " + to expand visual selection, _ to shrink
 Plug 'terryma/vim-expand-region'
+" Autoinsert closing punctuation
+"Plug 'jiangmiao/auto-pairs'

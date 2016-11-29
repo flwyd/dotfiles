@@ -13,7 +13,9 @@ Plug 'basepi/vim-conque', { 'on': 'ConqueTerm' }
 " Interactive command execution
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 " TypeScript omnicomplete, symbol jumps, make, etc; needs vimproc
-Plug 'Quramy/tsuquyomi'
+if v:version >= 704
+  Plug 'Quramy/tsuquyomi'
+endif
 " ShellTerminal, Shell asynchronous comand output to a window
 " Needs vim 7.3, patchset 569
 if exists('*pyeval')

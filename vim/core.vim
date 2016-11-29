@@ -14,7 +14,7 @@ set showmatch
 set incsearch
 set hlsearch
 " backspace over everything
-set backspace+=indent,eol,start
+set backspace=indent,eol,start
 " force case sensitivity with \C
 "set ignorecase
 set smartcase
@@ -76,6 +76,8 @@ let g:airline#extensions#hunks#non_zero_only = 1
 let g:airline#extensions#tabline#enabled = 1
 " Show the column name when editing a CSV file
 let g:airline#extensions#csv#column_display = 'Name'
+" I already have git branch name in terminal title
+let g:airline#extensions#branch#enabled = 0
 " Only show file encoding and format if it's not utf-8[unix]
 call airline#parts#define_condition('ffenc', '&fileformat != "unix" || &fileencoding != "utf-8" && &fileencoding != ""')
 
