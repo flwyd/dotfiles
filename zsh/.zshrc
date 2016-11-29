@@ -4,12 +4,18 @@ HISTSIZE=100000
 SAVEHIST=100000
 
 # Completion
-zstyle :compinstall filename '/home/tstone/.zshrc'
-autoload -Uz compinit
-compinit
+zstyle :compinstall filename "${ZDOTDIR-$HOME}/.zshrc"
+zstyle ':completion:*' completer _complete _ignored
+zstyle ':completion:*' list-colors ''
+zstyle ':completion:*' matcher-list '' 'r:|[._-]=* r:|=*'
+zstyle ':completion:*:default' list-prompt ''
 # Don't constantly reparse for completion
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path /tmp/$USER/zsh/cache
+# git clone git://github.com/zsh-users/zsh-completions ~/.zsh-completions
+fpath+="$HOME/.zsh-completions/src"
+autoload -Uz compinit
+compinit
 
 # Colors
 autoload -Uz colors
