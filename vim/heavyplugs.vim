@@ -1,7 +1,7 @@
 " Plugins with major functionality or significant dependencies
 
 " TlistOpen for function/tag overview, requires exuberant ctags
-Plug 'taglist.vim'
+Plug 'vim-scripts/taglist.vim'
 " Show positional tags, requires exuberant ctags
 Plug 'majutsushi/tagbar'
 " :Bck [options] pattern to ack the tree, default <cword>
