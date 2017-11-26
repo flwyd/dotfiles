@@ -87,3 +87,8 @@ call airline#parts#define_condition('ffenc', '&fileformat != "unix" || &fileenco
 if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
   runtime! macros/matchit.vim
 endif
+
+" Use ag rather than ack if it's installed
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
