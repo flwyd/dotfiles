@@ -83,6 +83,10 @@ let g:airline#extensions#branch#enabled = 0
 " Only show file encoding and format if it's not utf-8[unix]
 call airline#parts#define_condition('ffenc', '&fileformat != "unix" || &fileencoding != "utf-8" && &fileencoding != ""')
 
+" TypeScript import preferences
+let g:tsuquyomi_single_quote_import = 1
+let g:tsuquyomi_shortest_import_path = 1
+
 " Load matchit.vim, but only if the user hasn't installed a newer version.
 if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
   runtime! macros/matchit.vim
