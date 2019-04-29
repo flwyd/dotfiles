@@ -20,7 +20,9 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
 " highlight enclosing tag
-Plug 'Valloric/MatchTagAlways'
+if has('python') || has('python3')
+  Plug 'Valloric/MatchTagAlways'
+endif
 " highlight current term, :QuickhlManualAdd pattern
 Plug 't9md/vim-quickhl'
 " :A alt file :AS split :AN cycle :IH \ih cursor \is alt under cursor
