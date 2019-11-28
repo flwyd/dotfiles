@@ -100,3 +100,5 @@ Plug 'Chiel92/vim-autoformat'
 Plug 'terryma/vim-expand-region'
 " Autoinsert closing punctuation
 "Plug 'jiangmiao/auto-pairs'
+" Ember Handlebars/HTMLBars syntax and indentation
+Plug 'joukevandermaas/vim-ember-hbs'
