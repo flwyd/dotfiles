@@ -4,6 +4,8 @@
 Plug 'vim-scripts/taglist.vim'
 " Show positional tags, requires exuberant ctags
 Plug 'majutsushi/tagbar'
+" FZF fuzzy file finder
+Plug 'junegunn/fzf'
 " :Bck [options] pattern to ack the tree, default <cword>
 Plug 'mihaifm/Bck', { 'on': 'Bck' }
 " :GundoToggle tree replacement for :undolist

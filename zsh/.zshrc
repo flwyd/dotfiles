@@ -52,7 +52,19 @@ setopt \
   noprompt_sp \
   short_loops
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+# Load RVM into a shell session as a function
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+# Load fzf autocomplete and keybindings
+if [ -f ~/.fzf.zsh ]; then
+  source ~/.fzf.zsh
+  if command -v ag > /dev/null; then
+    export FZF_DEFAULT_COMMAND='ag -g ""'
+    _fzf_compgen_path() {
+      ag -g "" "$1"
+    }
+  fi
+fi
 
 # Command line editing and prompting
 PROMPT=$'%B%F{red}%?%f%b %F{green}%T%f %B%F{magenta}%!%f%b%# '
