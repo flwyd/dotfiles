@@ -6,12 +6,12 @@ Plug 'vim-scripts/taglist.vim'
 Plug 'majutsushi/tagbar'
 " FZF fuzzy file finder
 Plug 'junegunn/fzf'
+" Fuzzy searches of :Files :Buffers :Ag :Lines :History :Commands etc.
+Plug 'junegunn/fzf.vim'
 " :Bck [options] pattern to ack the tree, default <cword>
 Plug 'mihaifm/Bck', { 'on': 'Bck' }
 " :GundoToggle tree replacement for :undolist
 Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
-" ConqueTerm command output in a buffer
-Plug 'basepi/vim-conque', { 'on': 'ConqueTerm' }
 " Interactive command execution
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 " TypeScript omnicomplete, symbol jumps, make, etc; needs vimproc
