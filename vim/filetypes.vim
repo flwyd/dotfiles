@@ -11,9 +11,9 @@ augroup AlternateMapping
   " TODO .java <-> Test.java etc, maybe compactcode/alternate
 augroup END
 
-augroup Autoformat
+augroup Tabs
   autocmd!
-  autocmd BufWritePost *.go :silent Fmt
+  autocmd FileType go set tabstop=2 noexpandtab
 augroup END
 
 augroup Spelling

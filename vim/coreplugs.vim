@@ -8,8 +8,6 @@
 " source ~/dotfiles/vim/coreplugs.vim
 " call plug#end()
 
-" Go syntax, commands, etc.
-Plug 'jnwhiteh/vim-golang', { 'for': 'go' }
 " \\<motion> to highlight jump options
 Plug 'Lokaltog/vim-easymotion'
 " \be \bs \bv for buffer list
@@ -65,6 +63,9 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-characterize'
 " markdown syntax
 Plug 'tpope/vim-markdown'
+" [] bindings: a args, q qf, f file, n conflict, e exchange, space blank line
+" [] motion: x XML, u URL, y C string; f file, n merge conflict
+Plug 'tpope/vim-unimpaired'
 " C-A, C-X to increment, decrement a column of numbers
 Plug 'triglav/vim-visual-increment'
 " gS to split single-line constructs to multiline, gJ to join them
@@ -76,6 +77,8 @@ Plug 'google/vim-searchindex'
 " fancy statusline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+" Show register contents with ", @, and Ctrl-R; spacebar fullscreen
+Plug 'junegunn/vim-peekaboo'
 " CSV support
 Plug 'chrisbra/csv.vim'
 " Signs/highliting for lines changed from version control
@@ -84,6 +87,8 @@ Plug 'mhinz/vim-signify'
 Plug 'othree/html5.vim'
 " JSON syntax and error highlighting
 Plug 'elzr/vim-json'
+" :GoRun :GoBuild :GoTest :GoImport :GoRename :GoDoc :GoDef etc.
+Plug 'fatih/vim-go'
 " Completion using tab/shift tab, literal tab with C-tab or C-v tab
 Plug 'ervandew/supertab'
 " Color nested parens in rotating colors
