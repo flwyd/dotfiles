@@ -6,7 +6,7 @@ call vundle#rc()
 " self-manage vundle
 Bundle 'gmarik/vundle'
 " Go syntax, commands, etc.
-Bundle 'jnwhiteh/vim-golang'
+Bundle 'fatih/vim-go'
 " \\<motion> to highlight jump options
 Bundle 'Lokaltog/vim-easymotion'
 " \be \bs \bv for buffer list
