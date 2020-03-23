@@ -95,6 +95,8 @@ Plug 'ervandew/supertab'
 Plug 'luochen1990/rainbow'
 " Julia support plus LaTeXtoUnicode#Toggle() for \foo<tab>
 Plug 'JuliaEditorSupport/julia-vim'
+" Kotlin syntax
+Plug 'udalov/kotlin-vim'
 " Read .editorconfig files, see editorconfig.org
 Plug 'editorconfig/editorconfig-vim'
 " :JsPreTmpl syntax highlighting inside JavaScript template strings
@@ -106,6 +108,8 @@ Plug 'Chiel92/vim-autoformat'
 " + to expand visual selection, _ to shrink
 Plug 'terryma/vim-expand-region'
 " Autoinsert closing punctuation
+" Automatically close XML/SGML tags with > >> to have newlines
+Plug 'alvan/vim-closetag'
 "Plug 'jiangmiao/auto-pairs'
 " Ember Handlebars/HTMLBars syntax and indentation
 Plug 'joukevandermaas/vim-ember-hbs'
