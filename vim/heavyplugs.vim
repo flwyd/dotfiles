@@ -4,9 +4,9 @@
 Plug 'vim-scripts/taglist.vim'
 " Show positional tags, requires exuberant ctags
 Plug 'majutsushi/tagbar'
-" FZF fuzzy file finder
+" :FZF options path to perform a fuzzy search in path
 Plug 'junegunn/fzf'
-" Fuzzy searches of :Files :Buffers :Ag :Lines :History :Commands etc.
+" fzf on :Files :Buffers :Ag :Lines :Tags :History :Commits :Commands :GFiles? …
 Plug 'junegunn/fzf.vim'
 " :Bck [options] pattern to ack the tree, default <cword>
 Plug 'mihaifm/Bck', { 'on': 'Bck' }
