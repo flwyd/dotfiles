@@ -12,11 +12,14 @@
 Plug 'Lokaltog/vim-easymotion'
 " \be \bs \bv for buffer list
 Plug 'c9s/bufexplorer'
-" template code insertion and deps
-"Plug 'msanders/snipmate.vim'
+" dependency for vim-snipmate
 Plug 'MarcWeber/vim-addon-mw-utils'
+" :TScratch split scrath buf, :TBrowseOutput CMD, :Texecqfl CMD show quickfix
 Plug 'tomtom/tlib_vim'
+" insert snippets from snippets/lang.snippets files
 Plug 'garbas/vim-snipmate'
+" community-contributed snippets
+Plug 'honza/vim-snippets'
 " highlight enclosing tag
 if has('python') || has('python3')
   Plug 'Valloric/MatchTagAlways'
@@ -61,8 +64,6 @@ Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 " ga on a character for extended details
 Plug 'tpope/vim-characterize'
-" markdown syntax
-Plug 'tpope/vim-markdown'
 " [] bindings: a args, q qf, f file, n conflict, e exchange, space blank line
 " [] motion: x XML, u URL, y C string; f file, n merge conflict
 Plug 'tpope/vim-unimpaired'
@@ -79,37 +80,20 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Show register contents with ", @, and Ctrl-R; spacebar fullscreen
 Plug 'junegunn/vim-peekaboo'
-" CSV support
-Plug 'chrisbra/csv.vim'
 " Signs/highliting for lines changed from version control
 Plug 'mhinz/vim-signify'
-" HTML5 omnicomplete, indent, and syntax
-Plug 'othree/html5.vim'
-" JSON syntax and error highlighting
-Plug 'elzr/vim-json'
-" :GoRun :GoBuild :GoTest :GoImport :GoRename :GoDoc :GoDef etc.
-Plug 'fatih/vim-go'
 " Completion using tab/shift tab, literal tab with C-tab or C-v tab
 Plug 'ervandew/supertab'
 " Color nested parens in rotating colors
 Plug 'luochen1990/rainbow'
-" Julia support plus LaTeXtoUnicode#Toggle() for \foo<tab>
-Plug 'JuliaEditorSupport/julia-vim'
-" Kotlin syntax
-Plug 'udalov/kotlin-vim'
 " Read .editorconfig files, see editorconfig.org
 Plug 'editorconfig/editorconfig-vim'
-" :JsPreTmpl syntax highlighting inside JavaScript template strings
-Plug 'Quramy/vim-js-pretty-template'
-" TypeScript syntax
-Plug 'HerringtonDarkholme/yats.vim'
-" :Autoformat for various languages; needs external commands
-Plug 'Chiel92/vim-autoformat'
 " + to expand visual selection, _ to shrink
 Plug 'terryma/vim-expand-region'
 " Autoinsert closing punctuation
 " Automatically close XML/SGML tags with > >> to have newlines
 Plug 'alvan/vim-closetag'
 "Plug 'jiangmiao/auto-pairs'
-" Ember Handlebars/HTMLBars syntax and indentation
-Plug 'joukevandermaas/vim-ember-hbs'
+
+" Temporarily read langplugs.vim to avoid breaking unupdated .vimrc
+source <sfile>:h/langplugs.vim

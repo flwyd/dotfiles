@@ -57,6 +57,12 @@ command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 " context-sensitive tab completion
 let g:SuperTabDefaultCompletionType = 'context'
 
+" SnipMate configuration
+let g:snips_author = 'Trevor Stone'
+let g:snipMate = {}
+let g:snipMate.snippet_version = 1
+let g:snipMate.description_in_completion = 1
+
 " highlight cursor word in cyan
 let g:quickhl_cword_enable_at_startup = 1
 let g:quickhl_cword_hl_command = 'QuickhlCword guibg=LightCyan ctermbg=LightCyan term=reverse'
