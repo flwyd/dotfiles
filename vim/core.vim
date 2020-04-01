@@ -25,6 +25,11 @@ set wildmode=longest,full
 set wildmenu
 " C-A/C-X can increment letters
 set nrformats+=alpha
+" Use spelling dictionary for ctrl-X-ctrl-K
+set dictionary+=spell
+" Use https://github.com/vim/vim/files/2634525/thesaurus_pkg.zip from
+" https://github.com/vim/vim/issues/629#issuecomment-443293282 ctrl-X-ctrl-T
+set thesaurus+=~/.vim/thesaurus.txt
 " Detect lists when formatting
 set formatoptions+=n
 " Delete comment markers when joining lines
@@ -62,6 +67,9 @@ let g:snips_author = 'Trevor Stone'
 let g:snipMate = {}
 let g:snipMate.snippet_version = 1
 let g:snipMate.description_in_completion = 1
+
+" 250ms delay before showing registers with vim-peekaboo
+let g:peekaboo_delay = 250
 
 " highlight cursor word in cyan
 let g:quickhl_cword_enable_at_startup = 1
