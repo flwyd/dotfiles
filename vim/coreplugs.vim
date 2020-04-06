@@ -8,6 +8,8 @@
 " source ~/dotfiles/vim/coreplugs.vim
 " call plug#end()
 
+" Remove continuation characters when joining lines
+Plug 'flwyd/vim-conjoin'
 " \\<motion> to highlight jump options
 Plug 'Lokaltog/vim-easymotion'
 " \be \bs \bv for buffer list
