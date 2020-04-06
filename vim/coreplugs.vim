@@ -96,6 +96,8 @@ Plug 'terryma/vim-expand-region'
 " Automatically close XML/SGML tags with > >> to have newlines
 Plug 'alvan/vim-closetag'
 "Plug 'jiangmiao/auto-pairs'
+" GetRandomNumber() function between 0 and 1
+Plug 'fleischie/vim-rando', { 'branch': 'main' }
 
 " Temporarily read langplugs.vim to avoid breaking unupdated .vimrc
 source <sfile>:h/langplugs.vim
