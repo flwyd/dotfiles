@@ -8,8 +8,6 @@
 " source ~/dotfiles/vim/coreplugs.vim
 " call plug#end()
 
-" Remove continuation characters when joining lines
-Plug 'flwyd/vim-conjoin'
 " \\<motion> to highlight jump options
 Plug 'Lokaltog/vim-easymotion'
 " \be \bs \bv for buffer list
@@ -73,6 +71,9 @@ Plug 'tpope/vim-unimpaired'
 Plug 'triglav/vim-visual-increment'
 " gS to split single-line constructs to multiline, gJ to join them
 Plug 'AndrewRadev/splitjoin.vim'
+" Remove continuation characters when joining lines
+" Install after splitjoin to overwrite and reuse gJ mapping
+Plug 'flwyd/vim-conjoin'
 " da, to delete comma list item, cil' to change in last quote, etc.
 Plug 'wellle/targets.vim'
 " Show number of hits when searching
