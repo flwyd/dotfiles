@@ -10,6 +10,10 @@ elif ls -G -d / >/dev/null 2>&1 ; then
   alias ls='ls -G'
 fi
 
+# Common options
+# Like ag | less, but show colors
+alias agless="ag --pager='less -R'"
+
 # Commands that should ignore wildcards
 alias curl='noglob curl'
 alias wget='noglob wget'
