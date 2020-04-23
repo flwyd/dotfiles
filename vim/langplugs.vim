@@ -22,3 +22,7 @@ Plug 'fatih/vim-go'
 Plug 'JuliaEditorSupport/julia-vim'
 " Kotlin syntax
 Plug 'udalov/kotlin-vim'
+" AppleScript syntax and :AppleScriptRun :AppleScriptExport
+Plug 'mityu/vim-applescript'
+" Vader tests for Vimscript
+Plug 'junegunn/vader.vim'
