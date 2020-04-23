@@ -8,6 +8,8 @@ Plug 'majutsushi/tagbar'
 Plug 'junegunn/fzf'
 " fzf on :Files :Buffers :Ag :Lines :Tags :History :Commits :Commands :GFiles? …
 Plug 'junegunn/fzf.vim'
+" :Ack [opts] {pat} [dirs] ack/ag :Ack{FromSearch|Window} :LAck* to locationlist
+Plug 'mileszs/ack.vim'
 " :Bck [options] pattern to ack the tree, default <cword>
 Plug 'mihaifm/Bck', { 'on': 'Bck' }
 " :GundoToggle tree replacement for :undolist
