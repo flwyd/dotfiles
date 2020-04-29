@@ -24,3 +24,6 @@ alias gstat='git status -sb'
 # Ruby aliases
 alias brake='bundle exec rake'
 alias brails='bundle exec rails'
+
+# Optionally load local additions
+[[ -s ~/.zshlocal/.zshaliases ]] && source ~/.zshlocal/.zshaliases
