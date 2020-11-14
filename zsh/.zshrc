@@ -89,3 +89,6 @@ typeset -U fpath
 fpath=($ZDOTDIR/functions $fpath)
 autoload -U $ZDOTDIR/functions/*(:t)
 source $ZDOTDIR/.zshaliases
+
+# Optionally load local additions
+[[ -s ~/.zshlocal/.zshrc ]] && source ~/.zshlocal/.zshrc

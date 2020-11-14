@@ -2,3 +2,5 @@
 uptime
 which fortune > /dev/null && fortune -a
 curse 1
+# Optionally load local login items
+[[ -s ~/.zshlocal/.zlogin ]] && source ~/.zshlocal/.zlogin
