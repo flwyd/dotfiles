@@ -20,3 +20,8 @@ augroup Spelling
   autocmd!
   autocmd FileType text\|markdown set spell spelllang=en_us
 augroup END
+
+if !exists('g:conjoin_filetypes')
+  let g:conjoin_filetypes = {}
+endif
+let g:conjoin_filetypes.portfile = #{trailing: '\\$'}
