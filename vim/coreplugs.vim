@@ -40,7 +40,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'tomtom/tcomment_vim'
 " readline mappings in insert and command mode
 Plug 'tpope/vim-rsi'
-" let . repeate mapped commands
+" let . repeat mapped commands
 Plug 'tpope/vim-repeat'
 " :Abolish to iabbrev combinatorically
 " :S/child{,ren}/adult{,s}/g
