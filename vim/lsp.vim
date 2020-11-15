@@ -4,11 +4,11 @@ let g:lsp_diagnostics_echo_cursor = 1
 let g:airline#extensions#lsp#enabled = 1
 " Make sure gopls is in the path
 if !executable('gopls')
-  if has_key(environ(), 'GOBIN') && executable($GOBIN . '/gopls')
+  if !empty($GOBIN) && executable($GOBIN . '/gopls')
     let $PATH = $PATH . ':' . $GOBIN
-  elseif has_key(environ(), 'GOPATH') && executable($GOPATH . '/bin/gopls')
+  elseif !empty($GOPATH) && executable($GOPATH . '/bin/gopls')
     let $PATH = $PATH . ':' . ':' . $GOPATH . '/bin'
-  elseif has_key(environ(), 'HOME') && executable($HOME . '/go/bin/gopls')
+  elseif !empty($HOME) && executable($HOME . '/go/bin/gopls')
     let $PATH = $PATH . ':' . $HOME . '/go/bin'
   endif
 endif

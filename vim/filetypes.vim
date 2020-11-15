@@ -24,4 +24,4 @@ augroup END
 if !exists('g:conjoin_filetypes')
   let g:conjoin_filetypes = {}
 endif
-let g:conjoin_filetypes.portfile = #{trailing: '\\$'}
+let g:conjoin_filetypes.portfile = {'trailing': '\\$'}
