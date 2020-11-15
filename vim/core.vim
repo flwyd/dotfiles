@@ -78,7 +78,7 @@ let g:quickhl_cword_hl_command = 'QuickhlCword guibg=LightCyan ctermbg=LightCyan
 " configure rainbow parentheses
 let g:rainbow_active = 1
 let g:rainbow_conf = {
-      \ 'ctermfgs': ['Black', 'Gray', 'DarkRed', 'DarkBlue', 'Brown', 'DarkGreen', 'DarkMagenta', 'DarkCyan'],
+      \ 'ctermfgs': ['Black', 'DarkRed', 'DarkBlue', 'Brown', 'DarkGreen', 'DarkMagenta', 'DarkCyan', 'DarkGray'],
       \ }
 
 " Settings for airline plugin
