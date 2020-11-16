@@ -86,16 +86,18 @@ Plug 'junegunn/vim-peekaboo'
 " Signs/highliting for lines changed from version control
 Plug 'mhinz/vim-signify'
 " Completion using tab/shift tab, literal tab with C-tab or C-v tab
-Plug 'ervandew/supertab'
+" Plug 'ervandew/supertab'
+" Configurable completion chains with tab/S-tab, advance with C-h/C-j
+Plug 'lifepillar/vim-mucomplete'
 " Color nested parens in rotating colors
 Plug 'luochen1990/rainbow'
 " Read .editorconfig files, see editorconfig.org
 Plug 'editorconfig/editorconfig-vim'
 " + to expand visual selection, _ to shrink
 Plug 'terryma/vim-expand-region'
-" Autoinsert closing punctuation
 " Automatically close XML/SGML tags with > >> to have newlines
 Plug 'alvan/vim-closetag'
+" Autoinsert closing punctuation
 "Plug 'jiangmiao/auto-pairs'
 " GetRandomNumber() function between 0 and 1
 Plug 'fleischie/vim-rando', { 'branch': 'main' }

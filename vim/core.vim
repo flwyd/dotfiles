@@ -62,11 +62,36 @@ command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 " context-sensitive tab completion
 let g:SuperTabDefaultCompletionType = 'context'
 
+" MUcomplete settings
+set completeopt+=menuone
+" Insert literal tab if no matches
+"let g:mucomplete#tab_when_no_results = 1
+" Complete paths relative to current file, not $PWD
+let g:mucomplete#buffer_relative_paths = 1
+" Tab/S-Tab will cycle through methods, not up and down the menu
+let g:mucomplete#cycle_with_trigger = 1
+" Completion order: SnipMate, previous keyword, file path, omnicomplete,
+" spelling, tags, next keyword. Shift-tab goes in the reverse order
+" No includes scanned, use C-N/C-P for that
+let g:mucomplete#chains = {
+  \ 'default': ['snip', 'keyp', 'path', 'omni', 'uspl', 'tags', 'keyn'],
+  \ }
+" Use C-] to insert subsequent words like C-X C-P
+inoremap <expr> <C-]> mucomplete#extend_bwd("\<C-]>")
+" Expand snippets on enter, see |mucomplete-compatibility|
+inoremap <plug>MyEnter <CR>
+imap <silent> <expr> <plug>MyCR (pumvisible()
+    \ ? "\<c-y>\<plug>snipMateTrigger"
+    \ : "\<plug>MyEnter")
+imap <CR> <plug>MyCR
+
 " SnipMate configuration
 let g:snips_author = 'Trevor Stone'
 let g:snipMate = {}
 let g:snipMate.snippet_version = 1
 let g:snipMate.description_in_completion = 1
+" Let MUcomplete take tabs
+let g:snipMate.no_match_completion_feedkeys_chars = ''
 
 " 250ms delay before showing registers with vim-peekaboo
 let g:peekaboo_delay = 250
