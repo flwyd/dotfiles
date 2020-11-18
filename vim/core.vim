@@ -46,9 +46,6 @@ endif
 " faster than :set paste, insert, :set nopaste
 set pastetoggle=<F2>
 
-" F3 to format the buffer
-noremap <F3> :Autoformat<CR>
-
 " make non-active splits less prominent
 "hi StatusLineNC ctermbg=Gray guibg=Gray
 
@@ -76,21 +73,14 @@ let g:mucomplete#cycle_with_trigger = 1
 let g:mucomplete#chains = {
   \ 'default': ['snip', 'keyp', 'path', 'omni', 'uspl', 'tags', 'keyn'],
   \ }
-" Use C-] to insert subsequent words like C-X C-P
-inoremap <expr> <C-]> mucomplete#extend_bwd("\<C-]>")
-" Expand snippets on enter, see |mucomplete-compatibility|
-inoremap <plug>MyEnter <CR>
-imap <silent> <expr> <plug>MyCR (pumvisible()
-    \ ? "\<c-y>\<plug>snipMateTrigger"
-    \ : "\<plug>MyEnter")
-imap <CR> <plug>MyCR
+" See mappings.vim for mucomplete+snipMate support
 
 " SnipMate configuration
 let g:snips_author = 'Trevor Stone'
-let g:snipMate = {}
+let g:snipMate = get(g:, 'snipMate', {})
 let g:snipMate.snippet_version = 1
 let g:snipMate.description_in_completion = 1
-" Let MUcomplete take tabs
+" Let MUcomplete take tabs, don't insert tab on no match
 let g:snipMate.no_match_completion_feedkeys_chars = ''
 
 " 250ms delay before showing registers with vim-peekaboo

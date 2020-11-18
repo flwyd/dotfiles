@@ -7,9 +7,13 @@ map Y y$
 nnoremap <silent> <Leader>/ :nohl<CR>
 
 " Allow switching vim windows and deleting a word when SSH is in a Chrome tab
-" C-@ can be hit as ctrl-`; it normally does a repeat insert at start of imode
-map <C-@> <C-W>
-map! <C-@> <C-W>
+" C-@ can be hit as ctrl-` or ctrl-space; it normally does a repeat insert at
+" start of imode
+map <unique> <C-@> <C-W>
+map! <unique> <C-@> <C-W>
+
+" F3 to format the buffer
+noremap <F3> :Autoformat<CR>
 
 
 """ \d mappings to navigate directories
@@ -54,3 +58,18 @@ noremap <Leader>s<Bar> :%s/^<Bar> // <Bar> %s/ <Bar>$// <Bar> %s/ \+<Bar> \+/<Ta
 noremap <Leader>s' :s/[\u2018-\u201B]/'/g
 " U+201C-D is LEFT/RIGHT DOUBLE QUOTATION MARK, 201E-F is LOW-9/HIGH-REVERSED-9
 noremap <Leader>s" :s/[\u201C-\u201F]/"/g
+
+
+""" Completion mappings (MUcomplete + snipMate)
+" Expand snippets on enter, see |mucomplete-compatibility|
+inoremap <plug>MyEnter <CR>
+imap <silent> <expr> <plug>MyCR (pumvisible()
+    \ ? "\<c-y>\<plug>snipMateTrigger"
+    \ : "\<plug>MyEnter")
+imap <CR> <plug>MyCR
+" After activating snipMate, don't let MUcomplete take tabs
+imap <silent> <expr> <Tab> (exists('b:snip_state')
+    \ ? "\<plug>(snipMateNextOrTrigger)"
+    \ : "\<plug>(MUcompleteFwd)")
+" Use C-] to insert subsequent words like C-X C-P
+inoremap <expr> <C-]> mucomplete#extend_bwd("\<C-]>")
