@@ -68,11 +68,13 @@ let g:mucomplete#buffer_relative_paths = 1
 " Tab/S-Tab will cycle through methods, not up and down the menu
 let g:mucomplete#cycle_with_trigger = 1
 " Completion order: SnipMate, previous keyword, file path, omnicomplete,
-" spelling, tags, next keyword. Shift-tab goes in the reverse order
+" spelling, unicode, tags, next keyword. Shift-tab goes in the reverse order
 " No includes scanned, use C-N/C-P for that
 let g:mucomplete#chains = {
-  \ 'default': ['snip', 'keyp', 'path', 'omni', 'uspl', 'tags', 'keyn'],
+  \ 'default': ['snip', 'keyp', 'path', 'omni', 'uspl', 'char', 'tags', 'keyn'],
   \ }
+" Completion chain for Unicode character lookup
+let g:mucomplete#user_mappings = { 'char': "\<C-X>\<C-Z>" }
 " See mappings.vim for mucomplete+snipMate support
 
 " SnipMate configuration
