@@ -67,6 +67,9 @@ Plug 'tpope/vim-characterize'
 " [] bindings: a args, q qf, f file, n conflict, e exchange, space blank line
 " [] motion: x XML, u URL, y C string; f file, n merge conflict
 Plug 'tpope/vim-unimpaired'
+" C-X C-Z/G/B unicode/digraph/entity completion, C-G C-F fuzzy unicode
+" :Digraphs[!] [match] :UnicodeName [reg [type]] :UnicodeSearch[!] \un names
+Plug 'chrisbra/unicode.vim', { 'do': ':UnicodeDownload' }
 " C-A, C-X to increment, decrement a column of numbers
 Plug 'triglav/vim-visual-increment'
 " gS to split single-line constructs to multiline, gJ to join them
@@ -85,6 +88,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'junegunn/vim-peekaboo'
 " Signs/highliting for lines changed from version control
 Plug 'mhinz/vim-signify'
+" :Hgedit :Hgvdiff :Hgstatus etc. for Mercurial
+Plug 'ludovicchabant/vim-lawrencium'
 " Completion using tab/shift tab, literal tab with C-tab or C-v tab
 " Plug 'ervandew/supertab'
 " Configurable completion chains with tab/S-tab, advance with C-h/C-j
