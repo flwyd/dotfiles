@@ -16,7 +16,7 @@ alias agless="ag --pager='less -R'"
 
 # Commands that should ignore wildcards
 alias curl='noglob curl'
-alias links'noglob links'
+alias links='noglob links'
 alias wget='noglob wget'
 
 # Git aliases
