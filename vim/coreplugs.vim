@@ -106,6 +106,8 @@ Plug 'terryma/vim-expand-region'
 Plug 'alvan/vim-closetag'
 " Autoinsert closing punctuation
 "Plug 'jiangmiao/auto-pairs'
+" Drawing mode: arrows draw, shift move, <>^v arrows \> fat \b box visual ...
+Plug 'vim-scripts/DrawIt'
 " GetRandomNumber() function between 0 and 1
 Plug 'fleischie/vim-rando', { 'branch': 'main' }
 

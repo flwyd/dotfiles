@@ -72,3 +72,17 @@ imap <silent> <expr> <Tab> (exists('b:snip_state')
     \ : "\<plug>(MUcompleteFwd)")
 " Use C-] to insert subsequent words like C-X C-P
 inoremap <expr> <C-]> mucomplete#extend_bwd("\<C-]>")
+
+
+""" \D mappings for drawing; DrawIt defines mappings for
+" arrows, shift-arrows, <>^v, space, \<>^v \abefhls \ra-\rz \pa-\pz
+" Start drawing
+map <Leader>Ds <Plug>DrawItStart
+" Stop drawing
+map <Leader>Dx <Plug>DrawItStop
+" Draw in single-stroke unicode mode
+map <Leader>D1 :DIsngl<CR>
+" Draw in double-stroke unicode mode
+map <Leader>D2 :DIdbl<CR>
+" Draw in ascii mode (default)
+map <Leader>D0 :DInrml<CR>
