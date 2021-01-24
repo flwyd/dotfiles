@@ -32,10 +32,12 @@ Plug 'vim-scripts/a.vim'
 Plug 'vim-scripts/buffergrep'
 " sxy like fx for two chars, multiline; S backwards; dzxy as operator
 Plug 'justinmk/vim-sneak'
+" - directory browser - up . file to cmd y. yank abs path ~ home ctrl-6 prev
+" Plug 'tpope/vim-vinegar'
 " Enhanced directory navigation
-Plug 'scrooloose/nerdtree'
+Plug 'preservim/nerdtree'
 " comment commands \ci (invert) \cc (line) \cm (block) \c  (toggle) \cy (yank)..
-Plug 'scrooloose/nerdcommenter'
+Plug 'preservim/nerdcommenter'
 " comment: gc{move} gcc toggle g<{move} g>{move} un/comment C-_C-_ insert
 Plug 'tomtom/tcomment_vim'
 " readline mappings in insert and command mode

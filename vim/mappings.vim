@@ -17,7 +17,6 @@ noremap <F3> :Autoformat<CR>
 
 
 """ \d mappings to navigate directories
-
 " browse directory of current file
 nnoremap <Leader>df :NERDTree %<CR>
 " browse parent directory of current file
@@ -26,8 +25,8 @@ nnoremap <Leader>du :NERDTree %:h:h<CR>
 nnoremap <Leader>dd :NERDTree .<CR>
 " browse parent of current working directory
 nnoremap <Leader>dD :NERDTree ..<CR>
-" hide/show directory browser
-nnoremap <Leader>dx :NERDTreeToggle<CR>
+" show directory browser and move focus there
+nnoremap <Leader>dx :NERDTreeFocus<CR>
 " edit file in current file's directory
 nnoremap <Leader>de :e %:h/
 " split file in current file's directory

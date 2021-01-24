@@ -1,5 +1,7 @@
 filetype plugin indent on
 syntax on
+" Pick up specially-named directories adjacent to this file
+execute 'set runtimepath+=' . expand('<sfile>:h')
 " Modeline is dangerous: http://seclists.org/oss-sec/2016/q4/506
 set nomodeline
 " status display
