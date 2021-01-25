@@ -12,6 +12,10 @@ Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
 " :Bck [options] pattern to ack the tree, default <cword>
 Plug 'mihaifm/Bck', { 'on': 'Bck' }
+" Definition jumps: \j ag: s split p preview r refs T group; \ab back \al last
+if has('popup')
+  Plug 'pechorin/any-jump.vim'
+endif
 " :GundoToggle tree replacement for :undolist
 Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
 " Interactive command execution

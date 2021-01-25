@@ -87,6 +87,10 @@ let g:snipMate.description_in_completion = 1
 " Let MUcomplete take tabs, don't insert tab on no match
 let g:snipMate.no_match_completion_feedkeys_chars = ''
 
+" NERDTree settings
+" Enable vim-nerdtree-sync even if cursorline is disabled
+let g:nerdtree_sync_cursorline = 1
+
 " 250ms delay before showing registers with vim-peekaboo
 let g:peekaboo_delay = 250
 
@@ -128,4 +132,5 @@ endif
 " Use ag rather than ack if it's installed
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
+  let g:BckPrg = 'ag --nocolor --nogroup --column'
 endif

@@ -36,6 +36,8 @@ Plug 'justinmk/vim-sneak'
 " Plug 'tpope/vim-vinegar'
 " Enhanced directory navigation
 Plug 'preservim/nerdtree'
+" Sync NERDTree with current buffer
+Plug 'unkiwii/vim-nerdtree-sync'
 " comment commands \ci (invert) \cc (line) \cm (block) \c  (toggle) \cy (yank)..
 Plug 'preservim/nerdcommenter'
 " comment: gc{move} gcc toggle g<{move} g>{move} un/comment C-_C-_ insert
@@ -108,6 +110,9 @@ Plug 'alvan/vim-closetag'
 "Plug 'jiangmiao/auto-pairs'
 " Drawing mode: arrows draw, shift move, <>^v arrows \> fat \b box visual ...
 Plug 'vim-scripts/DrawIt'
+" Marks as signs dmx del, m. next avail, m- del line, []`' jump, '[] jump alpha
+" shift-0-9 markers: []- jump type, []= any type, m/ m? loclist, m<BS> del all
+"Plug 'kshenoy/vim-signature'
 " GetRandomNumber() function between 0 and 1
 Plug 'fleischie/vim-rando', { 'branch': 'main' }
 
