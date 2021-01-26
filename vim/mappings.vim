@@ -44,6 +44,24 @@ nnoremap <Leader>wt :TlistToggle<CR>
 nnoremap <Leader>wT :TagbarToggle<CR>
 
 
+""" Mappings for vim-textmanip to move/duplicate lines/selection
+" CTRL-H/J/K/L move line/selection, \D duplicates. left/right only on in visual
+" TODO remove belloff after https://github.com/t9md/vim-textmanip/issues/11
+set belloff+=esc
+nmap <C-K> <Plug>(textmanip-move-up)
+xmap <C-K> <Plug>(textmanip-move-up)
+nmap <C-J> <Plug>(textmanip-move-down)
+xmap <C-J> <Plug>(textmanip-move-down)
+xmap <C-H> <Plug>(textmanip-move-left)
+xmap <C-L> <Plug>(textmanip-move-right)
+nmap <Leader>Dk <Plug>(textmanip-duplicate-up)
+xmap <Leader>Dk <Plug>(textmanip-duplicate-up)
+nmap <Leader>Dj <Plug>(textmanip-duplicate-down)
+xmap <Leader>Dj <Plug>(textmanip-duplicate-down)
+xmap <Leader>Dh <Plug>(textmanip-duplicate-left)
+xmap <Leader>Dl <Plug>(textmanip-duplicate-right)
+
+
 """ \s mappings to perform common substitutions
 " Don't append <CR> so the command can be edited (like prepending %).
 

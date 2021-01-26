@@ -32,6 +32,12 @@ Plug 'vim-scripts/a.vim'
 Plug 'vim-scripts/buffergrep'
 " sxy like fx for two chars, multiline; S backwards; dzxy as operator
 Plug 'justinmk/vim-sneak'
+" cx motion twice to swap two areas; cxx match line, X visual, cxc abort
+Plug 'tommcdo/vim-exchange'
+" M-j/k move lines up/down M-h/l characters left/right; remapped to C-
+"Plug 'matze/vim-move'
+" Move or duplicate lines/selection up/down/left/right, and more
+Plug 't9md/vim-textmanip'
 " - directory browser - up . file to cmd y. yank abs path ~ home ctrl-6 prev
 " Plug 'tpope/vim-vinegar'
 " Enhanced directory navigation
