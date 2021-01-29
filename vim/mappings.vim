@@ -25,8 +25,14 @@ nnoremap <Leader>du :NERDTree %:h:h<CR>
 nnoremap <Leader>dd :NERDTree .<CR>
 " browse parent of current working directory
 nnoremap <Leader>dD :NERDTree ..<CR>
+" browse directory of word under cursor, but maybe edit it
+nnoremap <Leader>dw :NERDTree <C-R>=expand('<cword>')<CR>
+" browse directory of WORD under cursor, but maybe edit it
+nnoremap <Leader>dW :NERDTree <C-R>=expand('<cWORD>')<CR>
 " show directory browser and move focus there
 nnoremap <Leader>dx :NERDTreeFocus<CR>
+" hide/show directory browser
+nnoremap <Leader>dX :NERDTreeToggle<CR>
 " edit file in current file's directory
 nnoremap <Leader>de :e %:h/
 " split file in current file's directory

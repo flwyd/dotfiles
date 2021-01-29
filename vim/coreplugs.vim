@@ -42,6 +42,8 @@ Plug 't9md/vim-textmanip'
 " Plug 'tpope/vim-vinegar'
 " Enhanced directory navigation
 Plug 'preservim/nerdtree'
+" [y.!][.~phtre] yank/ex/shell relative/home/abs/head/tail/root/ext path
+Plug 'flwyd/nerdtree-harvest'
 " Sync NERDTree with current buffer
 Plug 'unkiwii/vim-nerdtree-sync'
 " comment commands \ci (invert) \cc (line) \cm (block) \c  (toggle) \cy (yank)..
