@@ -45,7 +45,7 @@ Plug 'preservim/nerdtree'
 " [y.!][.~phtre] yank/ex/shell relative/home/abs/head/tail/root/ext path
 Plug 'flwyd/nerdtree-harvest'
 " Sync NERDTree with current buffer
-Plug 'unkiwii/vim-nerdtree-sync'
+" Plug 'unkiwii/vim-nerdtree-sync'
 " comment commands \ci (invert) \cc (line) \cm (block) \c  (toggle) \cy (yank)..
 Plug 'preservim/nerdcommenter'
 " comment: gc{move} gcc toggle g<{move} g>{move} un/comment C-_C-_ insert
@@ -121,6 +121,9 @@ Plug 'vim-scripts/DrawIt'
 " Marks as signs dmx del, m. next avail, m- del line, []`' jump, '[] jump alpha
 " shift-0-9 markers: []- jump type, []= any type, m/ m? loclist, m<BS> del all
 "Plug 'kshenoy/vim-signature'
+" :HelpfulVersion helptext - display version feature was introduced
+" let b:helpful = 1 to show version info on cursor moves for ft=help/vim
+Plug 'tweekmonster/helpful.vim'
 " GetRandomNumber() function between 0 and 1
 Plug 'fleischie/vim-rando', { 'branch': 'main' }
 
