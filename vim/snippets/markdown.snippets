@@ -1,0 +1,21 @@
+snippet pluginstall Example plugin installation instructions
+	Use your favorite plugin manager, e.g.
+
+	\`\`\`vim
+	" vim-plug:
+	Plug '${1:flwyd}/${2:`fnamemodify('%', ':p:h:t')`}'
+	" Vundle:
+	Plugin '$1/$2'
+	" vim-addon-manager:
+	VAMActivate github:$1/$2
+	\`\`\`
+
+	or \`git clone https://github.com/$1/$2\` and
+	\`set runtimepath+=/path/to/$2\` in your \`.vimrc\`
+
+	or as a vim8 package:
+
+	\`\`\`sh
+	mkdir -p ~/vim/pack/$2/start
+	git clone https://github.com/$1/$2 ~/vim/pack/$2/start
+	\`\`\`

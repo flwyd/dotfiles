@@ -96,9 +96,10 @@ imap <silent> <expr> <plug>MyCR (pumvisible()
     \ : "\<plug>MyEnter")
 imap <CR> <plug>MyCR
 " After activating snipMate, don't let MUcomplete take tabs
-imap <silent> <expr> <Tab> (exists('b:snip_state')
-    \ ? "\<plug>(snipMateNextOrTrigger)"
-    \ : "\<plug>(MUcompleteFwd)")
+imap <expr> <Tab> (exists('b:snip_state')
+    \ ? "\<Plug>snipMateNextOrTrigger" : "\<Plug>(MUcompleteFwd)")
+imap <expr> <S-Tab> (exists('b:snip_state')
+    \ ? "\<Plug>snipMateBack" : "\<Plug>(MUcompleteBwd)")
 " Use C-] to insert subsequent words like C-X C-P
 inoremap <expr> <C-]> mucomplete#extend_bwd("\<C-]>")
 
