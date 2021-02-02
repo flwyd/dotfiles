@@ -60,12 +60,17 @@ nmap <C-J> <Plug>(textmanip-move-down)
 xmap <C-J> <Plug>(textmanip-move-down)
 xmap <C-H> <Plug>(textmanip-move-left)
 xmap <C-L> <Plug>(textmanip-move-right)
-nmap <Leader>Dk <Plug>(textmanip-duplicate-up)
-xmap <Leader>Dk <Plug>(textmanip-duplicate-up)
-nmap <Leader>Dj <Plug>(textmanip-duplicate-down)
-xmap <Leader>Dj <Plug>(textmanip-duplicate-down)
-xmap <Leader>Dh <Plug>(textmanip-duplicate-left)
-xmap <Leader>Dl <Plug>(textmanip-duplicate-right)
+nmap <C-D><C-K> <Plug>(textmanip-duplicate-up)
+xmap <C-D><C-K> <Plug>(textmanip-duplicate-up)
+nmap <C-D><C-J> <Plug>(textmanip-duplicate-down)
+xmap <C-D><C-J> <Plug>(textmanip-duplicate-down)
+nmap <C-D><C-H> vaW<Plug>(textmanip-duplicate-left)
+xmap <C-D><C-H> <Plug>(textmanip-duplicate-left)
+nmap <C-D><C-L> vaW<Plug>(textmanip-duplicate-right)
+xmap <C-D><C-L> <Plug>(textmanip-duplicate-right)
+" Normal ctrl-D behavior (scroll [count]/half page down) is ctrl-D ctrl-D
+nnoremap <C-D><C-D> <C-D>
+xnoremap <C-D><C-D> <C-D>
 
 
 """ \s mappings to perform common substitutions
