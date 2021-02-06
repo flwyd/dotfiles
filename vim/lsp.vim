@@ -34,6 +34,8 @@ function! s:on_lsp_buffer_enabled() abort
   " gy and gY aren't yet defined by vim
   nmap <buffer> gy <plug>(lsp-type-definition)
   nmap <buffer> gY <plug>(lsp-peek-type-definition)
+  " gA is not yet defined by vim
+  nmap <buffer> gA <plug>(lsp-code-action)
   " [g and ]g aren't yet defined by vim
   nmap <buffer> [g <Plug>(lsp-previous-diagnostic)
   nmap <buffer> ]g <Plug>(lsp-next-diagnostic)
