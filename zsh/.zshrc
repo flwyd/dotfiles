@@ -91,4 +91,5 @@ autoload -U $ZDOTDIR/functions/*(:t)
 source $ZDOTDIR/.zshaliases
 
 # Optionally load local additions
+[[ -s ~/.abbreviations ]] && source ~/.zshlocal/.abbreviations
 [[ -s ~/.zshlocal/.zshrc ]] && source ~/.zshlocal/.zshrc
