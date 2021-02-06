@@ -39,6 +39,8 @@ function! s:on_lsp_buffer_enabled() abort
   " [g and ]g aren't yet defined by vim
   nmap <buffer> [g <Plug>(lsp-previous-diagnostic)
   nmap <buffer> ]g <Plug>(lsp-next-diagnostic)
+  " \f mappings for fuzzy search
+  nmap <buffer> <Leader>fs <Plug>(lsp-document-symbol-search)
   " K does LspHover
   setlocal keywordprg=:LspHover
 endfunction
