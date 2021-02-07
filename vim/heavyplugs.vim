@@ -4,6 +4,8 @@
 Plug 'vim-scripts/taglist.vim'
 " Show positional tags, requires exuberant ctags
 Plug 'majutsushi/tagbar'
+" Automatically generate tags on edit and save
+Plug 'ludovicchabant/vim-gutentags'
 " :FZF options path to perform a fuzzy search in path
 Plug 'junegunn/fzf'
 " fzf on :Files :Buffers :Ag :Lines :Tags :History :Commits :Commands :GFiles? …

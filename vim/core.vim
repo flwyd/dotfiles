@@ -120,6 +120,16 @@ let g:airline#extensions#branch#enabled = 0
 " Only show file encoding and format if it's not utf-8[unix]
 call airline#parts#define_condition('ffenc', '&fileformat != "unix" || &fileencoding != "utf-8" && &fileencoding != ""')
 
+" Configuration for ctags-related plugins
+" Don't generate tags for google source
+if $PWD =~# '^/google/' || match(argv(), '^/google/') != -1
+  let g:gutentags_dont_load = 1
+endif
+" Don't generate tags for project roots matching these exact paths
+let g:gutentags_exclude_project_root = ['/etc', '/usr/local']
+" Don't stick tags files in project roots
+let g:gutentags_cache_dir = '~/.vim/tagscache'
+
 " TypeScript import preferences
 let g:tsuquyomi_single_quote_import = 1
 let g:tsuquyomi_shortest_import_path = 1

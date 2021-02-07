@@ -1,0 +1,8 @@
+# Ignore npm-downloaded modules and config
+--exclude=node_modules
+--exclude=package.json
+--exclude=package-lock.json
+# Ignore bootstrap etc.
+--exclude=vendor
+# Ignore temp files
+--exclude=tmp

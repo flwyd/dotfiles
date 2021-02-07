@@ -66,11 +66,19 @@ nnoremap <silent> <Leader>fG :Commits<CR>
 nnoremap <Leader>f<Space> :Files<Space>
 
 
-""" \w mappings for window management
-" Open taglist
-nnoremap <Leader>wt :TlistToggle<CR>
-" Open tagbar
-nnoremap <Leader>wT :TagbarToggle<CR>
+""" \t mappings for tag functions
+" Open tagbar and close it after selecting a tag
+nnoremap <silent> <Leader>tt :TagbarOpenAutoClose<CR>
+" Open tagbar and leave it open
+nnoremap <silent> <Leader>to :TagbarOpen<CR>
+" Close tagbar
+nnoremap <silent> <Leader>tx :TagbarClose<CR>
+" (Un)pause tagbar updates when switching files (will still jump in cur file)
+nnoremap <silent> <Leader>tp :TagbarTogglePause<CR>
+" Echo the current tag with hierachy and function args
+nnoremap <silent> <Leader>te :TagbarCurrentTag fs<CR>
+" Unfold parents until the current tag is visible
+nnoremap <silent> <Leader>tu :TagbarShowTag<CR>
 
 
 """ Mappings for vim-textmanip to move/duplicate lines/selection

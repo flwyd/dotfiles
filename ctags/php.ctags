@@ -1,0 +1,6 @@
+# Ignore composer-downloaded modules and config
+--exclude=vendor
+--exclude=composer.json
+--exclude=composer.lock
+# Ignore Laravel logs and caches
+--exclude=storage
