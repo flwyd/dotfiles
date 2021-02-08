@@ -129,6 +129,8 @@ endif
 let g:gutentags_exclude_project_root = ['/etc', '/usr/local']
 " Don't stick tags files in project roots
 let g:gutentags_cache_dir = '~/.vim/tagscache'
+" Don't use default any-jump mappings
+let g:any_jump_disable_default_keybindings = 1
 
 " TypeScript import preferences
 let g:tsuquyomi_single_quote_import = 1

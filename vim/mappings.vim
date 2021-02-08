@@ -69,16 +69,31 @@ nnoremap <Leader>f<Space> :Files<Space>
 """ \t mappings for tag functions
 " Open tagbar and close it after selecting a tag
 nnoremap <silent> <Leader>tt :TagbarOpenAutoClose<CR>
+xnoremap <silent> <Leader>tt :TagbarOpenAutoClose<CR>
 " Open tagbar and leave it open
 nnoremap <silent> <Leader>to :TagbarOpen<CR>
+xnoremap <silent> <Leader>to :TagbarOpen<CR>
 " Close tagbar
 nnoremap <silent> <Leader>tx :TagbarClose<CR>
+xnoremap <silent> <Leader>tx :TagbarClose<CR>
 " (Un)pause tagbar updates when switching files (will still jump in cur file)
 nnoremap <silent> <Leader>tp :TagbarTogglePause<CR>
+xnoremap <silent> <Leader>tp :TagbarTogglePause<CR>
 " Echo the current tag with hierachy and function args
 nnoremap <silent> <Leader>te :TagbarCurrentTag fs<CR>
+xnoremap <silent> <Leader>te :TagbarCurrentTag fs<CR>
 " Unfold parents until the current tag is visible
 nnoremap <silent> <Leader>tu :TagbarShowTag<CR>
+xnoremap <silent> <Leader>tu :TagbarShowTag<CR>
+" Do an ag search for word under cursor, show popup
+nnoremap <silent> <Leader>tj :AnyJump<CR>
+xnoremap <silent> <Leader>tj :AnyJumpVisual<CR>
+" Jump back to file where AnyJump started
+nnoremap <silent> <Leader>tJ :AnyJumpBack<CR>
+xnoremap <silent> <Leader>tJ :AnyJumpBack<CR>
+" Open last AnyJump popup
+nnoremap <silent> <Leader>tl :AnyJumpLast<CR>
+xnoremap <silent> <Leader>tl :AnyJumpLast<CR>
 
 
 """ Mappings for vim-textmanip to move/duplicate lines/selection

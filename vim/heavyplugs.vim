@@ -15,19 +15,8 @@ Plug 'mileszs/ack.vim'
 " :Bck [options] pattern to ack the tree, default <cword>
 Plug 'mihaifm/Bck', { 'on': 'Bck' }
 " Definition jumps: \j ag: s split p preview r refs T group; \ab back \al last
-if has('popup')
+if has('popupwin')
   Plug 'pechorin/any-jump.vim'
 endif
 " :GundoToggle tree replacement for :undolist
 Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
-" Interactive command execution
-Plug 'Shougo/vimproc.vim', { 'do': 'make' }
-" TypeScript omnicomplete, symbol jumps, make, etc; needs vimproc
-if v:version >= 704
-  Plug 'Quramy/tsuquyomi'
-endif
-" ShellTerminal, Shell asynchronous comand output to a window
-" Needs vim 7.3, patchset 569
-if exists('*pyeval')
-  Plug 'troydm/shellasync.vim'
-endif
