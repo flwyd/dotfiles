@@ -1,0 +1,4 @@
+# Run ripgrep with --pretty (colors, headers, line numbers) and pipe to less
+function rgless {
+  rg -p --stats "$@" | less -R
+}
