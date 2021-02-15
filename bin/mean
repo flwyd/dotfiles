@@ -1,0 +1,11 @@
+#!/usr/bin/perl
+
+$sum = 0;
+$lines = 0;
+while (<>) {
+	if (/^\s*(\d+)\s*/) {
+		$sum += $1;
+		++$lines;
+	}
+}
+print $lines ? $sum / $lines . "\n" : "No numbers found\n";

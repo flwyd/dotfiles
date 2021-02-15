@@ -1,0 +1,10 @@
+#!/usr/bin/perl
+
+use List::Util qw(max);
+$max = "";
+while (<>) {
+	if (/^\s*(\d+)\s*/) {
+		$max = $max eq "" ? $1 : max($max, $1);
+	}
+}
+print "$max\n";
