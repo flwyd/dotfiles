@@ -34,6 +34,8 @@ set dictionary+=spell
 set thesaurus+=~/.vim/thesaurus.txt
 " Detect lists when formatting
 set formatoptions+=n
+" Insert comment leader when hitting enter in a comment.
+set formatoptions+=r
 " Delete comment markers when joining lines
 if v:version >= 704
   set formatoptions+=j
