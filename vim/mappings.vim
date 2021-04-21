@@ -15,6 +15,9 @@ map! <unique> <C-@> <C-W>
 " F3 to format the buffer
 noremap <F3> :Autoformat<CR>
 
+" Use Q/q with vim-surround to replace with smart quotes, e.g. cs"Q
+let g:surround_81 = "“\r”"
+let g:surround_113 = "‘\r’"
 
 """ \d mappings to navigate directories
 " browse directory of current file
