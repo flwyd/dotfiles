@@ -4,6 +4,6 @@ endif
 let s:loaded = 1
 
 let s:file = expand('~/.abbreviations')
-if s:file->filereadable()
+if filereadable(s:file)
   call flwyd#readAbbreviations(s:file)
 endif
