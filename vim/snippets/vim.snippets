@@ -1,0 +1,14 @@
+snippet pluginenter File guard for maktaba plugins
+	let [s:plugin, s:enter] = maktaba#plugin#Enter(expand('<sfile>:p'))
+	if !s:enter
+		finish
+	endif
+	$0
+
+snippet pluginget Get plugin handle
+	let s:plugin = maktaba#plugin#Get('$0')
+
+snippet flag Declare/set flag value
+	""
+	" ${3:$1 value.}
+	call s:plugin.Flag('${1:name}', ${2:'default'})$0
