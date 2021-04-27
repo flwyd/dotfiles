@@ -120,7 +120,9 @@ let g:airline#extensions#csv#column_display = 'Name'
 " I already have git branch name in terminal title
 let g:airline#extensions#branch#enabled = 0
 " Only show file encoding and format if it's not utf-8[unix]
-call airline#parts#define_condition('ffenc', '&fileformat != "unix" || &fileencoding != "utf-8" && &fileencoding != ""')
+if exists('*airline#parts#define_condition')
+  call airline#parts#define_condition('ffenc', '&fileformat != "unix" || &fileencoding != "utf-8" && &fileencoding != ""')
+endif
 
 " Configuration for ctags-related plugins
 " Don't generate tags for google source
