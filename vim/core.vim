@@ -34,8 +34,12 @@ set dictionary+=spell
 set thesaurus+=~/.vim/thesaurus.txt
 " Detect lists when formatting
 set formatoptions+=n
+" Auto-wrap comments, inserting comment leader
+set formatoptions+=c
 " Insert comment leader when hitting enter in a comment.
 set formatoptions+=r
+" Don't insert comment leader when hitting o/O
+set formatoptions-=o
 " Delete comment markers when joining lines
 if v:version >= 704
   set formatoptions+=j
@@ -76,6 +80,7 @@ let g:mucomplete#cycle_with_trigger = 1
 " No includes scanned, use C-N/C-P for that
 let g:mucomplete#chains = {
   \ 'default': ['snip', 'keyp', 'path', 'omni', 'uspl', 'char', 'tags', 'keyn'],
+  \ 'vim': ['snip', 'keyp', 'path', 'cmd', 'uspl', 'char', 'keyn'],
   \ }
 " Completion chain for Unicode character lookup
 let g:mucomplete#user_mappings = { 'char': "\<C-X>\<C-Z>" }
@@ -96,9 +101,17 @@ let g:nerdtree_sync_cursorline = 1
 " 250ms delay before showing registers with vim-peekaboo
 let g:peekaboo_delay = 250
 
-" highlight cursor word in cyan
-let g:quickhl_cword_enable_at_startup = 1
-let g:quickhl_cword_hl_command = 'QuickhlCword guibg=LightCyan ctermbg=LightCyan term=reverse'
+" highlight cursor word automatically
+" let g:quickhl_cword_enable_at_startup = 1
+" for all buffers
+if !empty(globpath(&runtimepath, 'autoload/quickhl/cword.vim'))
+  augroup QuickhlConfig
+    autocmd!
+    autocmd BufEnter * call quickhl#cword#enable()
+  augroup END
+endif
+"let g:quickhl_cword_hl_command = 'QuickhlCword guibg=LightCyan ctermbg=LightCyan term=reverse'
+let g:quickhl_cword_hl_command = 'QuickhlCword gui=underline cterm=underline term=underline'
 
 " configure rainbow parentheses
 let g:rainbow_active = 1
@@ -108,20 +121,34 @@ let g:rainbow_conf = {
 
 " Settings for airline plugin
 " dark theme is hard to read on translucent windows
-let g:airline_theme = 'papercolor'
+" sol makes mode difference clearer than papercolor
+let g:airline_theme = 'sol'
+"let g:airline_theme = 'papercolor'
 " Don't show signs for git changes; turn on with \gt
 let g:signify_disable_by_default = 1
 " Only show git change info if there is any
 let g:airline#extensions#hunks#non_zero_only = 1
 " Show buffers in tabline if only one tab is open
-let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#enabled = 1
+" Don't show unicode SQUARE LN after line num
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.maxlinenr = ''
 " Show the column name when editing a CSV file
 let g:airline#extensions#csv#column_display = 'Name'
 " I already have git branch name in terminal title
 let g:airline#extensions#branch#enabled = 0
-" Only show file encoding and format if it's not utf-8[unix]
-if exists('*airline#parts#define_condition')
-  call airline#parts#define_condition('ffenc', '&fileformat != "unix" || &fileencoding != "utf-8" && &fileencoding != ""')
+if !empty(globpath(&runtimepath, 'autoload/airline.vim'))
+  " Only show file encoding and format if it's not utf-8[unix]
+  call airline#parts#define_condition('ffenc',
+        \ '&fileformat != "unix" || &fileencoding != "utf-8" && &fileencoding != ""')
+  augroup AirlineConfig
+    autocmd!
+    " Hide -- INSERT -- mode marker when it's shown in airline statusline
+    autocmd User AirlineToggledOn set noshowmode
+    autocmd User AirlineToggledOff set showmode
+  augroup END
 endif
 
 " Configuration for ctags-related plugins
@@ -139,6 +166,10 @@ let g:any_jump_disable_default_keybindings = 1
 " TypeScript import preferences
 let g:tsuquyomi_single_quote_import = 1
 let g:tsuquyomi_shortest_import_path = 1
+
+" Go preferences
+" Always show type info for expression under the cursor
+let g:go_auto_type_info = 1
 
 " Load matchit.vim, but only if the user hasn't installed a newer version.
 if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''

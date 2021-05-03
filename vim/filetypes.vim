@@ -13,12 +13,23 @@ augroup END
 
 augroup Tabs
   autocmd!
-  autocmd FileType go set tabstop=2 noexpandtab
+  autocmd FileType go set tabstop=2 shiftwidth=2 noexpandtab
 augroup END
 
 augroup Spelling
   autocmd!
-  autocmd FileType text\|markdown set spell spelllang=en_us
+  autocmd FileType text,markdown set spell spelllang=en_us
+augroup END
+
+augroup AutoClose
+  autocmd!
+  " TODO Consider JS etc. but handle '({x});' and struct literals gracefully
+  autocmd FileType c,cpp,go,java,kotlin inoremap <buffer> {<CR> {<CR>}<ESC>O
+augroup END
+
+augroup TypeInfo
+  autocmd!
+  autocmd FileType go let g:go_auto_type_info = 1
 augroup END
 
 if !exists('g:conjoin_filetypes')
