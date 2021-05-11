@@ -26,3 +26,5 @@ Plug 'udalov/kotlin-vim'
 Plug 'mityu/vim-applescript'
 " Vader tests for Vimscript
 Plug 'junegunn/vader.vim'
+" jsonnet filetype and :JsonnetFmt
+Plug 'google/vim-jsonnet'
