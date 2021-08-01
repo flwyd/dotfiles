@@ -118,6 +118,8 @@ Plug 'alvan/vim-closetag'
 "Plug 'jiangmiao/auto-pairs'
 " Drawing mode: arrows draw, shift move, <>^v arrows \> fat \b box visual ...
 Plug 'vim-scripts/DrawIt'
+" Align paragraph on = ops: g|ip= Align visual on all commas: g|*, etc.
+Plug 'junegunn/vim-easy-align'
 " Marks as signs dmx del, m. next avail, m- del line, []`' jump, '[] jump alpha
 " shift-0-9 markers: []- jump type, []= any type, m/ m? loclist, m<BS> del all
 "Plug 'kshenoy/vim-signature'

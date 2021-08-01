@@ -12,6 +12,10 @@ nnoremap <silent> <Leader>/ :nohl<CR>
 map <unique> <C-@> <C-W>
 map! <unique> <C-@> <C-W>
 
+" Interactive EasyAlign with g|
+nmap g<Bar> <Plug>(EasyAlign)
+xmap g<Bar> <Plug>(EasyAlign)
+
 " F3 to format the buffer
 noremap <F3> :Autoformat<CR>
 
