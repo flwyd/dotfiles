@@ -32,6 +32,12 @@ augroup TypeInfo
   autocmd FileType go let g:go_auto_type_info = 1
 augroup END
 
+augroup Folding
+  autocmd!
+  " SnipMates ftplugin folds all snippets. I don't like folds.
+  autocmd FileType snippets setlocal foldmethod=manual
+augroup END
+
 if !exists('g:conjoin_filetypes')
   let g:conjoin_filetypes = {}
 endif
