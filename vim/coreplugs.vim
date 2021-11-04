@@ -128,6 +128,8 @@ Plug 'junegunn/vim-easy-align'
 " :HelpfulVersion helptext - display version feature was introduced
 " let b:helpful = 1 to show version info on cursor moves for ft=help/vim
 Plug 'tweekmonster/helpful.vim'
+" Open filename:line or filename:line:column
+Plug 'wsdjeg/vim-fetch'
 " GetRandomNumber() function between 0 and 1
 Plug 'fleischie/vim-rando', { 'branch': 'main' }
 
