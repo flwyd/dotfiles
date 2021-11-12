@@ -28,3 +28,5 @@ Plug 'mityu/vim-applescript'
 Plug 'junegunn/vader.vim'
 " jsonnet filetype and :JsonnetFmt
 Plug 'google/vim-jsonnet'
+" Raku support, even if vim version only knows about perl6
+Plug 'Raku/vim-raku'

@@ -42,3 +42,6 @@ if !exists('g:conjoin_filetypes')
   let g:conjoin_filetypes = {}
 endif
 let g:conjoin_filetypes.portfile = {'trailing': '\\$'}
+
+" Insert Unicode characters for Raku/Perl6
+let g:raku_unicode_abbrevs = 1
