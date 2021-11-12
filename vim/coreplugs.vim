@@ -79,6 +79,8 @@ Plug 'tpope/vim-characterize'
 " [] bindings: a args, q qf, f file, n conflict, e exchange, space blank line
 " [] motion: x XML, u URL, y C string; f file, n merge conflict
 Plug 'tpope/vim-unimpaired'
+" :PP pretty print :Runtime reload :Messages qf g= eval motion/selection etc.
+Plug 'tpope/vim-scriptease'
 " C-X C-Z/G/B unicode/digraph/entity completion, C-G C-F fuzzy unicode
 " :Digraphs[!] [match] :UnicodeName [reg [type]] :UnicodeSearch[!] \un names
 Plug 'chrisbra/unicode.vim', { 'do': ':UnicodeDownload' }
@@ -126,6 +128,8 @@ Plug 'junegunn/vim-easy-align'
 " :HelpfulVersion helptext - display version feature was introduced
 " let b:helpful = 1 to show version info on cursor moves for ft=help/vim
 Plug 'tweekmonster/helpful.vim'
+" Open filename:line or filename:line:column
+Plug 'wsdjeg/vim-fetch'
 " GetRandomNumber() function between 0 and 1
 Plug 'fleischie/vim-rando', { 'branch': 'main' }
 
