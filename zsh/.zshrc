@@ -52,6 +52,9 @@ setopt \
   noprompt_sp \
   short_loops
 
+# Show Unicode characters in less
+export LESSCHARSET='utf-8'
+
 # Load RVM into a shell session as a function
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
