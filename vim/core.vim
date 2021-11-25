@@ -46,6 +46,8 @@ if v:version >= 704
 endif
 " automatically reload after external changes in clean buffers
 set autoread
+" arrow keys, backspace, and space move past line boundaries
+set whichwrap=b,s,<,>,[,]
 " Set color column to one past text width
 if exists('+colorcolumn')
   set colorcolumn=+1
