@@ -1,7 +1,7 @@
 " Plugins with major functionality or significant dependencies
 
-" TlistOpen for function/tag overview, requires exuberant ctags
-Plug 'vim-scripts/taglist.vim'
+" TlistOpen for function/tag overview, requires universal ctags
+Plug 'yegappan/taglist'
 " Show positional tags, requires exuberant ctags
 Plug 'majutsushi/tagbar'
 " Automatically generate tags on edit and save
