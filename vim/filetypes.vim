@@ -24,7 +24,7 @@ augroup END
 augroup AutoClose
   autocmd!
   " TODO Consider JS etc. but handle '({x});' and struct literals gracefully
-  autocmd FileType c,cpp,go,java,kotlin inoremap <buffer> {<CR> {<CR>}<ESC>O
+  autocmd FileType c,cpp,go,java,kotlin,raku inoremap <buffer> {<CR> {<CR>}<ESC>O
 augroup END
 
 augroup TypeInfo
@@ -44,4 +44,5 @@ endif
 let g:conjoin_filetypes.portfile = {'trailing': '\\$'}
 
 " Insert Unicode characters for Raku/Perl6
-let g:raku_unicode_abbrevs = 1
+" These are two aggressive, prevents bare slash or star
+"let g:raku_unicode_abbrevs = 1
