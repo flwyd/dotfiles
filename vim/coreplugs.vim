@@ -27,7 +27,8 @@ endif
 " highlight current term, :QuickhlManualAdd pattern
 Plug 't9md/vim-quickhl'
 " :A alt file :AS split :AN cycle :IH \ih cursor \is alt under cursor
-Plug 'vim-scripts/a.vim'
+" Automatic insert mappings are rude. Consider LucHermitte/alternate-lite
+" Plug 'vim-scripts/a.vim'
 " :Bgrep /re/ search buffers, Agrep args, Wgrep windows
 Plug 'vim-scripts/buffergrep'
 " sxy like fx for two chars, multiline; S backwards; dzxy as operator
