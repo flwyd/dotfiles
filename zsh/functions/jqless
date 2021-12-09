@@ -1,0 +1,10 @@
+# Run jq with colors and pipe to less
+function jqless {
+  if [ $# -eq 0 ]; then
+    jq -C . | less -R
+  elif [ ${1:e} = json ]; then
+    jq -C . "$@" | less -R
+  else
+    jq -C "$@" | less -R
+  fi
+}
