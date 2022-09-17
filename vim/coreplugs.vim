@@ -133,6 +133,8 @@ Plug 'tweekmonster/helpful.vim'
 Plug 'wsdjeg/vim-fetch'
 " GetRandomNumber() function between 0 and 1
 Plug 'fleischie/vim-rando', { 'branch': 'main' }
+" Unit testing
+Plug 'thinca/vim-themis'
 
 " Temporarily read langplugs.vim to avoid breaking unupdated .vimrc
 source <sfile>:h/langplugs.vim
