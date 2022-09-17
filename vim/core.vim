@@ -110,6 +110,8 @@ if !empty(globpath(&runtimepath, 'autoload/quickhl/cword.vim'))
   augroup QuickhlConfig
     autocmd!
     autocmd BufEnter * call quickhl#cword#enable()
+    " quickhl makes raku syntax highlighting run frequently, which is slow
+    autocmd BufEnter *.raku,*.rakumod,*.p6,*.p6mod call quickhl#cword#disable()
   augroup END
 endif
 "let g:quickhl_cword_hl_command = 'QuickhlCword guibg=LightCyan ctermbg=LightCyan term=reverse'
