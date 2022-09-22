@@ -13,11 +13,7 @@ Glaive imp plugin[mappings]
       \ Location[default]=vcsroot,pwd
       \ Report[default]=popupnotify
       \ popupnotify[position]=bottomright
-if has('patch-8.2.1978')
-  inoremap <C-X><C-X> <Cmd>ImpSuggest<CR>
-else
-  inoremap <C-X><C-X> <C-\><C-O>:ImpSuggest<CR>
-endif
+inoremap <C-X><C-X> <Plug>(imp-suggest-current)
 
 command MaktabaLogDebug
       \ call maktaba#log#SetNotificationLevel(maktaba#log#LEVELS.DEBUG)
