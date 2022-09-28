@@ -1,0 +1,72 @@
+#!/bin/zsh
+#
+# albumtomp3 copies a folder of music from one place to another, converting
+# to mp3 from AAC if it's not already in mp3 format.  Example:
+# albumtomp3 music/U2/{Boy,War} /Volumes/CARTUNES
+#
+# I created this script because my old car stereo could play AAC files but my
+# new one can only handle MP3s, but all the CDs I rip with iTunes are in AAC.
+# This isn't a general-purpose tool, e.g. it only works for .mp3 and .m4a
+# files and assumes that dierctory names are album names and don't contain a
+# mix of different audio formats (though if an album has been encoded twice in
+# both formats it will copy just the mp3s).
+
+if [[ $# -lt 2 ]]; then
+  echo "Usage: $0 sourcedir .. destdir"
+  exit 1
+fi
+
+# Don't warn about globs that match nothing
+setopt NULL_GLOB
+# ffmpeg is pretty noisy by default
+ffargs=(-hide_banner -nostats -loglevel warning)
+
+destbase=$*[-1]
+shift -p
+destbasempegs=($destbase/*.{mp3,m4a,MP3,M4A})
+if [[ $#destbasempegs -gt 0 ]]; then
+  echo "$destbase looks like an album with $#destbase songs"
+  exit 1
+fi
+echo "Copying $# albums into $destbase"
+
+for srcdir in $*; do
+  if [[ ! -d $srcdir ]]; then
+    echo "$srcdir is not a directory"
+    continue
+  fi
+  destdir="$destbase/${srcdir:t}"
+  if [[ -d $destdir ]]; then
+    # If we've already copied this one, don't redo the work
+    existing=($destdir/*.{mp3,m4a,MP3,M4A})
+    if [[ $#existing -gt 0 ]]; then
+      echo "Skipping $destdir which already has $#existing songs"
+    fi
+  fi
+  mkdir -p $destdir || exit $!
+
+  srcmp3s=($srcdir/*.{mp3,MP3})
+  if [[ $#srcmp3s -gt 0 ]]; then
+    echo "Copying $#srcmp3s existing mp3 files from $srcdir to $destdir"
+    cp $srcmp3s $destdir
+    continue
+  fi
+
+  srcm4as=($srcdir/*.{m4a,M4A})
+  if [[ $#srcm4as -eq 0 ]]; then
+    echo "No m4a files in $srcdir"
+    continue
+  fi
+
+  echo "Converting $#srcm4as m4a files from $srcdir to $destdir"
+  for src in $srcm4as; do
+    echo -n "."
+    dest="$destdir/${src:t:r}.mp3"
+    ffmpeg $ffargs -i $src -c:v copy -c:a libmp3lame -q:a 4 $dest
+    if [[ $! -ne 0 ]]; then
+      echo "ffmpeg error copying $src to $dest"
+      exit 1
+    fi
+  done
+  echo
+done
