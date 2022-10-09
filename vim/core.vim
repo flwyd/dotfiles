@@ -12,7 +12,6 @@ set display+=lastline
 " generic indenting
 set smarttab
 set shiftround
-set smartindent
 " search and highlighting
 set showmatch
 set incsearch
