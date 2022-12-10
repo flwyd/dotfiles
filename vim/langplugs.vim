@@ -30,3 +30,5 @@ Plug 'junegunn/vader.vim'
 Plug 'google/vim-jsonnet'
 " Raku support, even if vim version only knows about perl6
 Plug 'Raku/vim-raku'
+" Elixir support, which doesn't have an upstream process
+Plug 'elixir-editors/vim-elixir'
