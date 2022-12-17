@@ -55,6 +55,9 @@ setopt \
 # Show Unicode characters in less
 export LESSCHARSET='utf-8'
 
+# Save REPL history in erlang and iex
+export ERL_AFLAGS="-kernel shell_history enabled"
+
 # Load RVM into a shell session as a function
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
