@@ -18,7 +18,7 @@ augroup END
 
 augroup Spelling
   autocmd!
-  autocmd FileType text,markdown set spell spelllang=en_us
+  autocmd FileType text,markdown,gitcommit,hgcommit setlocal spell spelllang=en_us
 augroup END
 
 augroup AutoClose

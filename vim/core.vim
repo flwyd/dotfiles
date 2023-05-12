@@ -68,6 +68,9 @@ command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 " context-sensitive tab completion
 let g:SuperTabDefaultCompletionType = 'context'
 
+" Don't insert long complete choices; annoying with LSP
+set completeopt+=longest
+
 " MUcomplete settings
 set completeopt+=menuone
 " Insert literal tab if no matches

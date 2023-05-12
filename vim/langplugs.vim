@@ -32,3 +32,5 @@ Plug 'google/vim-jsonnet'
 Plug 'Raku/vim-raku'
 " Elixir support, which doesn't have an upstream process
 Plug 'elixir-editors/vim-elixir'
+" ADIF amateur data interchange format files
+Plug 'https://gitlab.com/Nate_B/vim-adif'
