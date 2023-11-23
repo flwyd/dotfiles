@@ -39,6 +39,18 @@ augroup Folding
   autocmd FileType snippets setlocal foldmethod=manual
 augroup END
 
+" TODO Upstream this, from https://github.com/tpope/vim-endwise/pull/128
+" without regex and plus juliaBlKeyword in syngroups
+augroup Julia_endwise
+  autocmd!
+  autocmd FileType julia
+        \ let b:endwise_addition = 'end' |
+        \ let b:endwise_words = 'module,struct,function,if,for,while,quote,begin,do,macro' |
+        \ let b:endwise_syngroups = 'juliaModule,juliaStruct,juliaFunction,juliaConditional,juliaRepeat,juliaExpression,juliaMacro,juliaBlKeyword'
+augroup END
+" Don't align Julia function arguments to open parens
+let g:julia_indent_align_brackets = 0
+
 if !exists('g:conjoin_filetypes')
   let g:conjoin_filetypes = {}
 endif
