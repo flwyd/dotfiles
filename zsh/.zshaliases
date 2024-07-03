@@ -28,8 +28,6 @@ alias brails='bundle exec rails'
 
 # Don't remember all the options
 alias adifinfer='adifmt infer -fields mode,band,station_callsign,my_gridsquare,my_gridsquare_ext,my_sig_info,sig_info,dxcc,my_dxcc'
-# TODO more precise VHF/UHF if I get an all-modes radio
-alias adifsetmode='adifmt edit -if "freq>=100" -add mode=FM | adifmt edit -if "freq<=7.3" -if "freq>=7.125" -or-if "freq<=4" -if "freq>=3.6" -or-if "freq<=2" -add mode=SSB -add submode=LSB | adifmt edit -if "freq<=14.35" -if "freq>=14.15" -or-if "freq<=18.168" -if "freq>=18.11" -or-if "freq<=21.45" -if "freq>=21.2" -or-if "freq<=24.99" -if "freq>=24.93" -or-if "freq<29" -if "freq>=28.3" -add mode=SSB -add submode=USB'
 
 # Optionally load local additions
 [[ -s ~/.zshlocal/.zshaliases ]] && source ~/.zshlocal/.zshaliases

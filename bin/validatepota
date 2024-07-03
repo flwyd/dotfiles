@@ -1,0 +1,18 @@
+#!/bin/sh
+# Validates required and some optional fields from POTA requirements are present
+# and fields comply with the ADIF spec.
+# See https://docs.pota.app/docs/rules.html#logging-requirements
+
+adifmt validate \
+  --required-fields station_callsign \
+  --required-fields operator \
+  --required-fields call \
+  --required-fields qso_date \
+  --required-fields time_on \
+  --required-fields band \
+  --required-fields mode \
+  --required-fields my_state \
+  --required-fields my_pota_ref \
+  --required-fields my_sig \
+  --required-fields my_sig_info \
+  "$@"
