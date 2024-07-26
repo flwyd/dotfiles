@@ -5,7 +5,6 @@ Plug 'google/vim-maktaba'
 " Configure Maktaba plugins: Glaive foo plugin[mappings] x='Y'
 Plug 'google/vim-glaive'
 " :FormatCode :FormatLines \=motion
-" Plug 'google/vim-codefmt'
-Plug 'flwyd/vim-codefmt'
+Plug 'google/vim-codefmt'
 " \ii :ImpSuggest \if :ImpFirst import symbol
 Plug 'flwyd/vim-imp'
