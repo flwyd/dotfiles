@@ -8,7 +8,7 @@ adifmt edit -if 'freq>3.6' -if 'freq<4' \
   -or-if 'freq>=18.11' -if 'freq<18.168' \
   -or-if 'freq>=21.2' -if 'freq<21.45' \
   -or-if 'freq>=24.93' -if 'freq<24.99' \
-  -or-if 'freq>=28.3' -if 'freq<28.3' \
+  -or-if 'freq>=28.3' -if 'freq<29' \
   -or-if 'freq>=50.12' -if 'freq<50.3' \
   -add mode=SSB |\
 
