@@ -27,7 +27,7 @@ alias brake='bundle exec rake'
 alias brails='bundle exec rails'
 
 # Don't remember all the options
-alias adifinfer='adifmt infer -fields mode,band,station_callsign,my_gridsquare,my_gridsquare_ext,my_sig_info,sig_info,dxcc,my_dxcc'
+alias adifinfer='adifmt infer -fields mode,band,station_callsign,my_gridsquare,my_gridsquare_ext,my_sig_info,sig_info,dxcc,my_dxcc,usaca_counties,my_usaca_counties,cnty,my_cnty'
 
 # Optionally load local additions
 [[ -s ~/.zshlocal/.zshaliases ]] && source ~/.zshlocal/.zshaliases
