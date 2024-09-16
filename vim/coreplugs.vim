@@ -131,6 +131,8 @@ Plug 'junegunn/vim-easy-align'
 Plug 'tweekmonster/helpful.vim'
 " Open filename:line or filename:line:column
 Plug 'wsdjeg/vim-fetch'
+" :NR to open a narrowed region in a new window, etc.
+Plug 'chrisbra/NrrwRgn'
 " GetRandomNumber() function between 0 and 1
 Plug 'fleischie/vim-rando', { 'branch': 'main' }
 " Unit testing
