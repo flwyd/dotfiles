@@ -40,6 +40,6 @@ adifmt edit -if 'freq>=432.1' -if 'freq<433' -add mode=SSB |\
 # 70cm repeaters and simplex, 442 to 450, overlaps some ATV repeaters
 adifmt edit -if 'freq>=442' -if 'freq<450' -add mode=FM |\
 
-# SSB is usually LSB on 40m and below, USB on 20m and above
-adifmt edit -if mode=SSB -if 'freq<8' -add submode=LSB |\
-adifmt edit -if mode=SSB -if 'freq>=14' -add submode=USB
+# SSB is usually LSB on 40m and below except 60m, USB on 20m and above
+adifmt edit -if mode=SSB -if 'freq<8' -if-not 'band=60m' -add submode=LSB |\
+adifmt edit -if mode=SSB -if 'freq>=14' -or-if 'band=60m' -add submode=USB
