@@ -52,6 +52,10 @@ if exists('+colorcolumn')
   set colorcolumn=+1
 endif
 
+" default spellcheck on in comments and strings
+set spell
+set spelloptions+=camel
+
 " faster than :set paste, insert, :set nopaste
 set pastetoggle=<F2>
 
@@ -119,8 +123,9 @@ endif
 "let g:quickhl_cword_hl_command = 'QuickhlCword guibg=LightCyan ctermbg=LightCyan term=reverse'
 let g:quickhl_cword_hl_command = 'QuickhlCword gui=underline cterm=underline term=underline'
 
-" configure rainbow parentheses
-let g:rainbow_active = 1
+" configure rainbow parentheses, but don't autoenable to avoid spell issue:
+" https://github.com/luochen1990/rainbow/issues?q=is%3Aissue+label%3A%22spell+checking+issue%22+
+" let g:rainbow_active = 1
 let g:rainbow_conf = {
       \ 'ctermfgs': ['Black', 'DarkRed', 'DarkBlue', 'Brown', 'DarkGreen', 'DarkMagenta', 'DarkCyan', 'DarkGray'],
       \ }
