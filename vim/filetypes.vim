@@ -1,5 +1,10 @@
 " Configuration for specific file types and languages
 
+" Enable all the PostScript highlighting
+let g:postscr_level=3
+let g:postscr_display=1
+let g:postscr_ghostscript=1
+
 augroup AlternateMapping
   autocmd!
   autocmd FileType objc let g:alternateExtensions_h = "m"
@@ -24,7 +29,7 @@ augroup END
 augroup AutoClose
   autocmd!
   " TODO Consider JS etc. but handle '({x});' and struct literals gracefully
-  autocmd FileType c,conf,cpp,go,java,kotlin,proto,raku,textpb
+  autocmd FileType c,conf,cpp,go,java,kotlin,postscr,proto,raku,textpb
         \ inoremap <buffer> {<CR> {<CR>}<ESC>O
 augroup END
 

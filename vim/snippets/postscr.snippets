@@ -1,0 +1,106 @@
+snippet dict Anonymous dictionary begin/end
+	${1:24} dict begin
+		$0
+	end
+
+snippet dictname Define named dictionary begin/end
+	/${1:mydict} ${2:24} dict def
+	$1 begin
+		$0
+	end %/$1
+
+snippet proc Named procedure
+	/${1:myproc} { % ${2:-} $1 ${3:-}
+		$0
+	} bind def %/$1
+
+snippet procdict Named procedure with local variables
+	/${1:myproc} { ${4:8 dict} begin % ${2:-} $1 ${3:-}
+		${0:${VISUAL}}
+	end } bind def %/$1
+
+snippet procif Procedure if not already defined
+	/${1:myproc} where { pop } { %else
+		/$1 { % ${2:-} $1 ${3:-}
+			$0
+		} bind def
+	} ifelse %/$1
+
+snippet procifdict Procedure with local variables if not already defined
+	/${1:myproc} where { pop } { %else
+		/$1 { ${4:8 dict} begin % ${2:-} $1 ${3:-}
+			$0
+		end } bind def
+	} ifelse %/$1
+
+snippet clone Copy array/dict/string to a new object
+	dup length ${1:string} copy $0
+
+snippet knownget Get value from dict if set
+	2 copy known { get } { ${1:pop pop} } ifelse
+
+snippet if If block
+	${1:cond} { %if
+		$0
+	} if
+
+snippet ife If-else block
+	${1:cond} { %ifelse
+		${2:${VISUAL}}
+	} { %else
+		$0
+	} ifelse
+
+snippet for Indexed for loop
+	${1:0} ${2:1} ${3:n} { %for
+		$0
+	} ${4:bind }for
+
+snippet fora Iterate over array elements
+	{ %forall
+		$0
+	} ${1:bind }forall
+
+snippet loop Infinite loop until exit or stop
+	{ %loop
+		${0} ${1:cond} { exit } if
+	} ${2:bind }loop
+
+snippet repeat Repeat block n times
+	${1:n} { %repeat
+		$0
+	} ${2:bind }repeat
+
+snippet try Run procedure, check error with stopped
+	{ $0 } stopped { ${1:handleerror} } if
+
+snippet throw Raise an error via errordict
+	/${1:name} cvx errordict /${2:typecheck} get exec
+
+snippet throws Raise a named error via signalerror
+	/${1:name} cvx ${2:/typecheck} signalerror
+
+snippet save Save and later restore VM state
+	/${1:saveobj} save def
+	$0
+	$1 restore
+
+snippet gsave Save and later restore graphics state
+	/${1:gsaveobj} gsave def
+	$0
+	$1 grestore
+
+snippet stdin Standard input as file
+	(%stdin) (r) file $0
+
+snippet stdout Standard output as file
+	(%stdout) (w) file $0
+
+snippet stderr Standard error as file
+	(%stderr) (w) file $0
+
+snippet lineedit Read single line of user input
+	(%lineedit) (r) file ${1:dup bytesavailable string} ${2:readstring pop}
+
+snippet statementedit Read a PostScript fragment from the user
+	(%statementedit) (r) file ${1:dup bytesavailable string} ${2:readstring pop}
