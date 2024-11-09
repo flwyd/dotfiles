@@ -150,8 +150,10 @@ noremap <Leader>s" :s/[\u201C-\u201F]/"/g
 
 
 """ Completion mappings (MUcomplete + snipMate)
+" Avoid beep on snipmate complete in select mode, see DiscretionaryEnd call
+let g:endwise_no_mappings = 1
 " Expand snippets on enter, see |mucomplete-compatibility|
-inoremap <plug>MyEnter <CR>
+inoremap <plug>MyEnter <CR><Plug>DiscretionaryEnd
 imap <silent> <expr> <plug>MyCR (pumvisible()
     \ ? "\<c-y>\<plug>snipMateTrigger"
     \ : "\<plug>MyEnter")
