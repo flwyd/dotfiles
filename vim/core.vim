@@ -182,10 +182,18 @@ let g:tsuquyomi_shortest_import_path = 1
 " Always show type info for expression under the cursor
 let g:go_auto_type_info = 1
 
-" Load matchit.vim, but only if the user hasn't installed a newer version.
-if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
-  runtime! macros/matchit.vim
-endif
+"" Plugins that come with Vim ""
+function! s:maybePackAdd(name) abort
+  if finddir('pack/dist/opt/' .. a:name, &packpath) != ''
+    exec 'packadd!' a:name
+  endif
+endfunction
+" Settings from .editorconfig files
+call s:maybePackAdd('editorconfig')
+" :HelpToc table of contents for Vim help, man, etc.
+call s:maybePackAdd('helptoc')
+" Let % work on if/else, g% backwards, [%/]% unmatched, va% select block
+call s:maybePackAdd('matchit')
 
 " Use ag rather than ack if it's installed
 if executable('ag')
