@@ -1,0 +1,22 @@
+#!/bin/sh
+# Validates required and some optional fields in files meant for LotW upload.
+# https://lotw.arrl.org/lotw-help/qsodata/
+# Requires additional location fields since I mostly operate portable rather
+# than using a fixed location config.
+
+adifmt validate \
+  --required-fields station_callsign \
+  --required-fields call \
+  --required-fields qso_date \
+  --required-fields time_on \
+  --required-fields band \
+  --required-fields mode \
+  --required-fields dxcc \
+  --required-fields my_dxcc \
+  --required-fields my_state \
+  --required-fields my_gridsquare \
+  "$@" | \
+adifmt validate --if 'my_dxcc=291|6|110' \
+  --required-fields my_cnty,my_usaca_counties | \
+adifmt validate --if 'my_dxcc=15|54|61|126|151|288|339|21|29|32|281' \
+  --required-fields my_cnty

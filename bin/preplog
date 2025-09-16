@@ -1,0 +1,90 @@
+#!/bin/zsh
+
+# Allow adifinfer to be used in edit pipelines
+source ~/dotfiles/zsh/.zshaliases
+
+STAGING="/tmp/preplog/$$"
+COUNT=(adifmt count -output=tsv -count-field=num)
+REQUIRED=station_callsign,my_dxcc,call,qso_date,time_on,band,mode,dxcc
+
+function pickaction {
+  echo "================"
+  echo $curfile
+  $COUNT -fields=station_callsign,qso_date,my_pota_ref,my_state -tsv-omit-header $curfile
+  echo "Actions: bandmode where dxcc fields combine edit validate save reset done quit"
+  read "action?Action: "
+}
+
+function dobandmode { $COUNT -fields=band,mode,submode $curfile }
+function doband { $COUNT -fields=band $curfile }
+function domode { $COUNT -fields=mode,submode $curfile }
+function dofields { adifmt cat -output=tsv $curfile | head -1 }
+
+function dowhere {
+  $COUNT -fields=my_dxcc,my_state,my_cq_zone,my_itu_zone,my_city,my_cnty,my_gridsquare,my_lat,my_lon,my_altitude,my_iota $curfile
+}
+
+function dodxcc {
+  $COUNT -fields=country,dxcc,state,cqz,ituz,cont,gridsquare $curfile
+}
+
+function docombine {
+  tmpfile="$STAGING/${curfile:t}"
+  mkdir -p $STAGING
+  echo "Combine output to $tmpfile"
+  adifmt cat $curfile | adifmt combine -key-fields=qso_date,time_on,call,band,mode \
+    | adifmt validate | adifmt save -overwrite-existing $tmpfile
+  curfile=$tmpfile
+}
+
+function doedit {
+  tmpfile="$STAGING/${curfile:t}"
+  mkdir -p $STAGING
+  echo "Edit output to $tmpfile"
+  read -A "command?Command/pipeline: "
+  adifmt cat $curfile | eval $command | \
+    adifmt validate | adifmt save -overwrite-existing $tmpfile
+  curfile=$tmpfile
+}
+
+function dovalidate {
+  adifmt validate $curfile -required-fields=$REQUIRED > /dev/null \
+    || echo "Validation error oon $curfile"
+}
+
+function dosave {
+  if [[ $curfile == $origfile ]]; then
+    echo "No edits made yet, nothing to save"
+    return
+  fi
+  echo "Saving $curfile to $origfile"
+  adifmt cat $curfile \
+    | adifmt validate -required-fields=$REQUIRED \
+    | adifmt save -overwrite-existing $origfile
+  curfile=$origfile
+}
+
+foreach origfile ($@) do
+  action=''
+  tmpfile=''
+  curfile=$origfile
+  while [[ $action != "done" ]]; do
+    pickaction
+    case $action in
+      (done) ;;
+      (bandmode) dobandmode ;;
+      (band) doband ;;
+      (mode) domode ;;
+      (where) dowhere ;;
+      (dxcc) dodxcc ;;
+      (fields) dofields ;;
+      (combine) docombine ;;
+      (edit|adifmt*) doedit ;;
+      (validate) dovalidate ;;
+      (save) dosave ;;
+      (reset) curfile=$origfile ;;
+      (quit) exit 1 ;;
+      (*) echo "Unknown action $action"
+    esac
+  done
+done
