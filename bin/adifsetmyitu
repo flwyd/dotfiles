@@ -1,0 +1,11 @@
+#!/bin/zsh
+
+# Continental US, Hawaii, and Alaska
+adifmt edit -add my_itu_zone=6 -if my_dxcc=291 -if 'my_lon>=W180 00.000' -if 'my_lon<W110 00.000' -if-not my_state=WY | \
+  adifmt edit -add my_itu_zone=7 -if my_dxcc=291 -if 'my_lon>=W110 00.000' -if 'my_lon<W090 00.000' -or-if my_dxcc=291 -if my_state=WY | \
+  adifmt edit -add my_itu_zone=8 -if my_dxcc=291 -if 'my_lon>=W090 00.000' -if 'my_lon<W000 00.000' | \
+  adifmt edit -add my_itu_zone=2 -if my_dxcc=6 -if 'my_lon<W141 00.000' | \
+  adifmt edit -add my_itu_zone=1 -if my_dxcc=6 | \
+  adifmt edit -add my_itu_zone=61 -if my_dxcc=110
+
+# TODO Canada
