@@ -2,7 +2,7 @@
 function jqless {
   if [ $# -eq 0 ]; then
     jq -C . | less -R
-  elif [ ${1:e} = json ]; then
+  elif [[ ${1:e} =~ '(geo)?json' ]]; then
     jq -C . "$@" | less -R
   else
     jq -C "$@" | less -R
