@@ -30,7 +30,7 @@ alias brails='bundle exec rails'
 alias gsrepl='rlwrap gsnd -q -dNOSAFER'
 
 # Don't remember all the options
-alias adifinfer='adifmt infer -fields mode,band,station_callsign,my_gridsquare,my_gridsquare_ext,my_sig_info,sig_info,dxcc,my_dxcc,usaca_counties,my_usaca_counties,cnty,my_cnty'
+alias adifinfer='adifmt infer -fields mode,band,station_callsign,my_gridsquare,my_gridsquare_ext,my_sig_info,sig_info,dxcc,my_dxcc,cqz,my_cq_zone,ituz,my_itu_zone,usaca_counties,my_usaca_counties,cnty,my_cnty,cont'
 
 # Optionally load local additions
 [[ -s ~/.zshlocal/.zshaliases ]] && source ~/.zshlocal/.zshaliases
