@@ -19,7 +19,7 @@ adifmt edit -if 'freq>3.5' -if 'freq<3.7' \
   -or-if 'freq>14' -if 'freq<14.07' \
   -or-if 'freq>18.068' -if 'freq<18.1' \
   -or-if 'freq>21' -if 'freq<21.07' \
-  -or-if 'freq>24.89' -if 'freq<14.91' \
+  -or-if 'freq>24.89' -if 'freq<24.91' \
   -or-if 'freq>28' -if 'freq<28.07' \
   -or-if 'freq>50.1' -if 'freq<50.12' \
   -add mode=CW |\
