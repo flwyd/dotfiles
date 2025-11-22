@@ -6,6 +6,9 @@ map Y y$
 " Quickly turn off search highlights
 nnoremap <silent> <Leader>/ :nohl<CR>
 
+" Show syntax highlighting attributes of item under cursor
+noremap gC <Cmd>call flwyd#showCurSyntax()<CR>
+
 " Allow switching vim windows and deleting a word when SSH is in a Chrome tab
 " C-@ can be hit as ctrl-` or ctrl-space; it normally does a repeat insert at
 " start of imode

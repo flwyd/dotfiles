@@ -1,3 +1,19 @@
+function! flwyd#showCurSyntax() abort
+  for l:id in synstack(line('.'), col('.'))
+    let l:tr = synIDtrans(l:id)
+    let l:parts = [printf('%s=%s', l:id, synIDattr(l:id, 'name'))]
+    for l:a in ['name', 'fg', 'bg', 'ul']
+      let l:parts = add(l:parts, printf('%s=%s', l:a, synIDattr(l:tr, l:a)))
+    endfor
+    for l:a in ['bold', 'italic', 'reverse', 'standout', 'underline', 'undercurl', 'strike', 'nocombine']
+      if synIDattr(l:tr, l:a)
+        let l:parts = add(l:parts, l:a)
+      endif
+    endfor
+    echom join(l:parts, ' ')
+  endfor
+endfunction
+
 function! flwyd#readAbbreviations(filename) abort
   if !a:filename->filereadable()
     echoerr "Can't read abbreviations file" a:filename
