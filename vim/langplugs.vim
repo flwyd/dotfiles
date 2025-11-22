@@ -6,6 +6,8 @@ Plug 'Chiel92/vim-autoformat'
 Plug 'chrisbra/csv.vim'
 " markdown syntax
 Plug 'tpope/vim-markdown'
+" jq syntax
+Plug 'vito-c/jq.vim'
 " HTML5 omnicomplete, indent, and syntax
 Plug 'othree/html5.vim'
 " JSON syntax and error highlighting

@@ -19,6 +19,7 @@ augroup END
 augroup Tabs
   autocmd!
   autocmd FileType go set tabstop=2 shiftwidth=2 noexpandtab
+  autocmd FileType tsv iunmap <tab>
 augroup END
 
 augroup Spelling
@@ -29,7 +30,7 @@ augroup END
 augroup AutoClose
   autocmd!
   " TODO Consider JS etc. but handle '({x});' and struct literals gracefully
-  autocmd FileType c,conf,cpp,go,java,kotlin,postscr,proto,raku,textpb
+  autocmd FileType awk,c,conf,cpp,go,java,jq,jsonnet,kotlin,postscr,proto,raku,textpb
         \ inoremap <buffer> {<CR> {<CR>}<ESC>O
 augroup END
 
