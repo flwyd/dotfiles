@@ -30,7 +30,7 @@ augroup END
 augroup AutoClose
   autocmd!
   " TODO Consider JS etc. but handle '({x});' and struct literals gracefully
-  autocmd FileType awk,c,conf,cpp,go,java,jq,jsonnet,kotlin,postscr,proto,raku,textpb
+  autocmd FileType awk,c,conf,cpp,dot,go,java,jq,jsonnet,kotlin,postscr,proto,raku,textpb
         \ inoremap <buffer> {<CR> {<CR>}<ESC>O
 augroup END
 
