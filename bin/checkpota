@@ -1,0 +1,129 @@
+#!/bin/zsh
+# Script to check Parks on the Air logs for possible callsign and state typos.
+
+ERRORS=0
+CACHEDIR="${TMPDIR:-/tmp}/checkpota"
+TODAY=$(date +%Y-%m-%d)
+BOLD=$(tput bold)
+NORMAL=$(tput sgr0)
+GNUDATE=0
+if date --version 2> /dev/null | grep GNU > /dev/null ; then
+  GNUDATE=1
+fi
+
+function ustoymd {
+  local slashes="$1"
+  if (( $GNUDATE )); then
+    # GNU -d is "use this date" and it automagically detects format
+    date -d "$slashes" +%Y-%m-%d
+  else
+    # BSD -j is "use this date" and -f must specify format
+    date -j -f %m/%d/%Y "$slashes" +%Y-%m-%d
+  fi
+}
+
+function fetch_cache {
+  local url="$1"
+  cache="$CACHEDIR/${url##[a-z]*://}"
+  if [[ -s "$cache" ]]; then
+    result=0
+  else
+    curl -s -S --create-dirs -o "$cache" "$url"
+    result=$?
+  fi
+  cat "$cache"
+  return $result
+}
+
+validatepota "$@" \
+    | adifmt select -output tsv -tsv-omit-header -fields call,state,dxcc,pota_ref \
+    | while read -r full_call state dxcc pota_ref ; do
+  call=${full_call%%/*}
+
+  licensename=""
+  if [[ ! $call =~ "^([AKNW]|V[A-GXY]|C[F-KYZ]|X[J-O]).*" ]]; then
+    echo "Skipping hamcall for call $call"
+    calljson=""
+  else
+    calljson=$(fetch_cache "https://hamcall.dev/$call.json")
+    if [[ $? -ne 0 ]]; then
+      echo "${BOLD}*** Error looking up $call on hamcall.dev${NORMAL}"
+      ((ERRORS+=1))
+    else
+      licensename=$(jq -r '.name' <<< $calljson)
+    fi
+  fi
+  potajson=$(fetch_cache "https://api.pota.app/profile/$call")
+  if [[ $potajson =~ "Callsign not found" ]]; then
+    potamsg="$call $licensename does not have a pota.app account"
+    recentmsg=""
+  else
+    jq -r '[.name, .stats.attempts.qsos, .stats.hunter.qsos, .qth] | @tsv' <<< $potajson \
+      | IFS=$'\t' read -r pota_name activator_qsos hunter_qsos pota_qth
+    potamsg="$pota_name QSOs $activator_qsos/$hunter_qsos QTH ${pota_qth:-unknown}"
+    jq -r '[ .recent_activity | [.hunter_qsos[0], .activations[0]] | .[] | [(.date + "" | sub("T.*"; "")), .reference, .location] ] | flatten | @tsv' <<< $potajson \
+      | IFS=$'\t' read -r lasthdate lasthref lasthloc lastadate lastaref lastaloc
+    recentmsg="Last Activator: $lastaloc $lastadate $lastaref Hunter: $lasthloc $lasthdate $lasthref"
+  fi
+  place="$state"
+  if [[ -z "$pota_ref" ]]; then
+    place="$state"
+  else
+    place="$state $pota_ref"
+  fi
+  echo "$full_call from $place $potamsg"
+  if [[ ! -z "$recentmsg" ]] echo "  $recentmsg"
+
+  pota_match=0
+  if [[ ! -z "$pota_ref" ]]; then
+    foreach ref (${(s/,/)pota_ref})
+      parkjson=$(fetch_cache "https://api.pota.app/park/$ref")
+      locations=($(jq -r \
+        '.locationDesc | split(",") | .[] | sub("^[A-Z]{2}-"; "")' \
+        <<< $parkjson))
+      if [[ ${locations[(i)$state]} -gt ${#locations} ]]; then
+        echo "${BOLD}*** $pota_ref is not in $state${NORMAL}"
+        ((ERRORS+=1))
+      else
+        pota_match=1
+      fi
+    end
+  fi
+
+  if [[ ! -z $calljson ]]; then
+    jq -r '[.state, .class, .status, .code, .expiration] | @csv' <<< $calljson \
+      | IFS=',' read -r call_state call_class hcstatus code expiration
+    call_class="${call_class//\"/}"
+    call_state="${call_state//\"/}"
+    expiration="${expiration//\"/}"
+    if [[ $hcstatus != "" ]]; then
+      echo "${BOLD}*** Status $hcstatus $code for $call $code${NORMAL}"
+      ((ERRORS+=1))
+      continue
+    fi
+    if [[ $pota_match -eq 0 && $state != $call_state ]]; then
+      echo "${BOLD}*** $call lives in $call_state, not $state${NORMAL}"
+      ((ERRORS+=1))
+    fi
+    if [[ $call_class == "T" || $call_class == "N" ]]; then
+      echo "${BOLD}*** $call does not have HF privileges, class $call_class${NORMAL}"
+      ((ERRORS+=1))
+    fi
+    if [[ ! -z "$expiration" ]]; then
+      #expires=$(date -j -f %m/%d/%Y $expiration +%Y-%m-%d)
+      expires=$(ustoymd "$expiration")
+      if [[ $expires < $TODAY ]]; then
+        echo "${BOLD}*** $call license expired on $expires${NORMAL}"
+        ((ERRORS+=1))
+      fi
+    fi
+  else
+    echo "${BOLD}*** Error looking up $call on hamcall.dev${NORMAL}"
+    ((ERRORS+=1))
+  fi
+done
+
+if [[ $ERRORS -gt 0 ]]; then
+  echo "$ERRORS errors"
+  exit 1
+fi
