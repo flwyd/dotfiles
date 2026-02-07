@@ -200,3 +200,10 @@ if executable('ag')
   let g:ackprg = 'ag --vimgrep'
   let g:BckPrg = 'ag --nocolor --nogroup --column'
 endif
+
+" ChromeOS black (actually white) on light magenta popups are unreadable in
+" ChromeOS Light theme in Terminal app.
+" lspReference links to CursorColumn which is black-on-reverse
+command ChromeColors
+      \ hi Pmenu ctermfg=Black ctermbg=DarkGray guibg=DarkGray
+      \ | hi CursorColumn term=standout ctermbg=LightMagenta
