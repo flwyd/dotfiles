@@ -1,3 +1,4 @@
-vcs_info
-branch="$vcs_info_msg_0_"
-echo -ne $"\033]0;${branch} ${PWD/$HOME/~} ${USER}@$(hostname -s)\007"
+# vcs_info
+# branch="$vcs_info_msg_0_"
+# echo -ne $"\033]0;${branch} ${PWD/$HOME/~} ${USER}@$(hostname -s)\007"
+echo -ne $"\033]0;$(hostname -s) ${PWD/$HOME/~} ${USER}@\007"
