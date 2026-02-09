@@ -117,9 +117,6 @@ validatepota "$@" \
         ((ERRORS+=1))
       fi
     fi
-  else
-    echo "${BOLD}*** Error looking up $call on hamcall.dev${NORMAL}"
-    ((ERRORS+=1))
   fi
 done
 
