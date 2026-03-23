@@ -41,7 +41,7 @@ validatepota "$@" \
   call=${full_call%%/*}
 
   licensename=""
-  if [[ ! $call =~ "^([AKNW]|V[A-GXY]|C[F-KYZ]|X[J-O]).*" ]]; then
+  if [[ ! $call =~ "^([AKNW]|V[A-GOXY]|C[F-KYZ]|X[J-O]).*" ]]; then
     echo "Skipping hamcall for call $call"
     calljson=""
   else
