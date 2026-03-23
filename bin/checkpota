@@ -57,6 +57,10 @@ validatepota "$@" \
   if [[ $potajson =~ "Callsign not found" ]]; then
     potamsg="$call $licensename does not have a pota.app account"
     recentmsg=""
+    if [[ ! -z "$pota_ref" ]]; then
+      echo "${BOLD}*** Activator $call at $pota_ref does not have a pota.app account${NORMAL}"
+      ((ERRORS+=1))
+    fi
   else
     jq -r '[.name, .stats.attempts.qsos, .stats.hunter.qsos, .qth] | @tsv' <<< $potajson \
       | IFS=$'\t' read -r pota_name activator_qsos hunter_qsos pota_qth
