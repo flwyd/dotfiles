@@ -133,6 +133,9 @@ Plug 'tweekmonster/helpful.vim'
 Plug 'wsdjeg/vim-fetch'
 " :NR to open a narrowed region in a new window, etc.
 Plug 'chrisbra/NrrwRgn'
+" ]= ]+ ]- move same/more/less indent, ii ai aI block textobjs
+" TODO set up mappings, prior to plug#begin
+Plug 'jessekelighine/vindent.vim'
 " GetRandomNumber() function between 0 and 1
 Plug 'fleischie/vim-rando', { 'branch': 'main' }
 " Unit testing
