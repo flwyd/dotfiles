@@ -1,3 +1,15 @@
+snippet cpo_save Set cpo&vim, save and restore cpo
+	let s:cpo_save = &cpo
+	set cpo&vim
+	let &cpo = s:cpo_save
+	unlet s:cpo_save
+
+snippet scriptenter File guard for vimscripts
+	if exists('b:${1:did_ftplugin}')
+		finish
+	endif
+	let b:$1 = 1
+
 snippet pluginenter File guard for maktaba plugins
 	let [s:plugin, s:enter] = maktaba#plugin#Enter(expand('<sfile>:p'))
 	if !s:enter
