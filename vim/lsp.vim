@@ -2,7 +2,9 @@
 let g:lsp_signs_enabled = 1
 let g:lsp_diagnostics_echo_cursor = 1
 let g:lsp_diagnostics_float_cursor = 1
-let g:lsp_diagnostics_float_delay = 2000
+" https://github.com/prabirshrestha/vim-lsp/issues/1510
+let g:lsp_diagnostics_float_delay = 500
+" let g:lsp_diagnostics_float_delay = 2000
 let g:lsp_diagnostics_virtual_text_enabled = 0
 let g:lsp_float_max_width = 0
 let g:airline#extensions#lsp#enabled = 1
@@ -41,6 +43,8 @@ function! s:on_lsp_buffer_enabled() abort
   " [g and ]g aren't yet defined by vim
   nmap <buffer> [g <Plug>(lsp-previous-diagnostic)
   nmap <buffer> ]g <Plug>(lsp-next-diagnostic)
+  " g? normally does rot13 encoding of motion, use it for 'what error?'
+  nmap <buffer> g? <Cmd>echo lsp#internal#diagnostics#under_cursor#get_diagnostic()<CR>
   " \f mappings for fuzzy search
   nmap <buffer> <Leader>fs <Plug>(lsp-document-symbol-search)
   " K does LspHover
