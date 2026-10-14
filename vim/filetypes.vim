@@ -20,6 +20,12 @@ augroup AlternateMapping
   " TODO .java <-> Test.java etc, maybe compactcode/alternate
 augroup END
 
+augroup Beeps
+  autocmd!
+  " Rust uses <> for generic types, but -> for return types and => for match
+  autocmd FileType rust setlocal belloff+=showmatch
+augroup END
+
 augroup Tabs
   autocmd!
   autocmd FileType go setlocal tabstop=2 shiftwidth=2 noexpandtab
