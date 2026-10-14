@@ -5,6 +5,10 @@ let g:postscr_level=3
 let g:postscr_display=1
 let g:postscr_ghostscript=1
 
+" TypeScript import preferences
+let g:tsuquyomi_single_quote_import = 1
+let g:tsuquyomi_shortest_import_path = 1
+
 augroup AlternateMapping
   autocmd!
   autocmd FileType objc let g:alternateExtensions_h = "m"
@@ -18,7 +22,7 @@ augroup END
 
 augroup Tabs
   autocmd!
-  autocmd FileType go set tabstop=2 shiftwidth=2 noexpandtab
+  autocmd FileType go setlocal tabstop=2 shiftwidth=2 noexpandtab
   autocmd FileType tsv iunmap <tab>
 augroup END
 

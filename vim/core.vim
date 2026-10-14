@@ -174,14 +174,6 @@ let g:gutentags_cache_dir = '~/.vim/tagscache'
 " Don't use default any-jump mappings
 let g:any_jump_disable_default_keybindings = 1
 
-" TypeScript import preferences
-let g:tsuquyomi_single_quote_import = 1
-let g:tsuquyomi_shortest_import_path = 1
-
-" Go preferences
-" Always show type info for expression under the cursor
-let g:go_auto_type_info = 1
-
 "" Plugins that come with Vim ""
 function! s:maybePackAdd(name) abort
   if finddir('pack/dist/opt/' .. a:name, &packpath) != ''
@@ -199,6 +191,15 @@ call s:maybePackAdd('matchit')
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
   let g:BckPrg = 'ag --nocolor --nogroup --column'
+endif
+
+if has('gui')
+  set number signcolumn=number
+  augroup GuiOptions
+    autocmd BufEnter * call flwyd#maybeAdjustColumns()
+    autocmd OptionSet number,textwidth,colorcolumn,foldcolumn,signcolumn
+          \ call flwyd#maybeAdjustColumns()
+  augroup END
 endif
 
 " ChromeOS black (actually white) on light magenta popups are unreadable in
