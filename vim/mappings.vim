@@ -56,7 +56,7 @@ nnoremap <Leader>dS :let &laststatus=(2 == &laststatus ? 1 : 2)<CR>
 """ \f mappings for fuzzy search
 " When applicable, lower case refers to current buffer, upper case globally
 " except that f means files in current dir, F means files checked out in VCS,
-" and space prompts for a file
+" q is quickfix, Q is location list, and space prompts for a file.
 nnoremap <silent> <Leader>ff :Files<CR>
 nnoremap <silent> <Leader>fF :GFiles?<CR>
 nnoremap <silent> <Leader>fb :Buffers<CR>
@@ -73,6 +73,8 @@ nnoremap <silent> <Leader>f/ :History/<CR>
 nnoremap <silent> <Leader>fc :Commands<CR>
 nnoremap <silent> <Leader>fg :BCommits<CR>
 nnoremap <silent> <Leader>fG :Commits<CR>
+nnoremap <silent> <Leader>fq :call flwyd#fzfQuickfix()<CR>
+nnoremap <silent> <Leader>fQ :call flwyd#fzfLocations()<CR>
 nnoremap <Leader>f<Space> :Files<Space>
 
 
