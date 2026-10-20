@@ -96,8 +96,9 @@ fpath=($ZDOTDIR/functions $fpath)
 autoload -U $ZDOTDIR/functions/*(:t)
 source $ZDOTDIR/.zshaliases
 
-# Parks on the Air filename format
+# Parks on the Air/World Wide Flora & Fauna filename format
 potatemplate='{station_callsign}@{my_pota_ref}-{qso_date}.adi'
+wwfftemplate='{station_callsign}@{my_wwff_ref}-{qso_date}.adi'
 
 # Optionally load local additions
 [[ -s ~/.abbreviations ]] && source ~/.abbreviations
