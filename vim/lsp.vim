@@ -1,4 +1,8 @@
 " Configuration for vim-lsp
+" let g:lsp_log_file = '/tmp/vim-lsp.log'
+let g:lsp_settings = {
+      \ 'bacon-ls': {'disabled': 1},
+      \}
 let g:lsp_signs_enabled = 1
 let g:lsp_diagnostics_echo_cursor = 1
 let g:lsp_diagnostics_float_cursor = 1

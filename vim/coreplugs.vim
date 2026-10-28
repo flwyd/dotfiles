@@ -94,8 +94,8 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'flwyd/vim-conjoin'
 " da, to delete comma list item, cil' to change in last quote, etc.
 Plug 'wellle/targets.vim'
-" Show number of hits when searching
-Plug 'google/vim-searchindex'
+" Show number of hits when searching; use shortmess-=S instead
+" Plug 'google/vim-searchindex'
 " fancy statusline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -131,6 +131,8 @@ Plug 'junegunn/vim-easy-align'
 Plug 'tweekmonster/helpful.vim'
 " Open filename:line or filename:line:column
 Plug 'wsdjeg/vim-fetch'
+" :Quickpeek in quickfix menu to see context in a popup
+Plug 'andrewradev/quickpeek.vim'
 " :NR to open a narrowed region in a new window, etc.
 Plug 'chrisbra/NrrwRgn'
 " ]= ]+ ]- move same/more/less indent, ii ai aI block textobjs

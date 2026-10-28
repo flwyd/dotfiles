@@ -16,6 +16,7 @@ set shiftround
 set showmatch
 set incsearch
 set hlsearch
+set shortmess-=S
 " backspace over everything
 set backspace=indent,eol,start
 " force case sensitivity with \C
@@ -72,8 +73,14 @@ command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 " context-sensitive tab completion
 let g:SuperTabDefaultCompletionType = 'context'
 
+" Automatically show popup preview of quickfix/loclist items
+let g:quickpeek_auto = 1
+
 " Don't insert long complete choices; annoying with LSP
 set completeopt+=longest
+" Use popup rather than preview for completion details
+set completeopt-=preview
+set completeopt+=popup
 
 " MUcomplete settings
 set completeopt+=menuone
@@ -187,6 +194,12 @@ call s:maybePackAdd('helptoc')
 " Let % work on if/else, g% backwards, [%/]% unmatched, va% select block
 call s:maybePackAdd('matchit')
 
+" Use ripgrep for :grep if available
+" See https://github.com/BurntSushi/ripgrep/discussions/2282 re: --vimgrep
+if executable('rg')
+  set grepprg=rg\ --vimgrep\ $*
+  set grepformat^=%f:%l:%c:%m
+endif
 " Use ag rather than ack if it's installed
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
