@@ -21,9 +21,10 @@ Plug 'garbas/vim-snipmate'
 " community-contributed snippets
 Plug 'honza/vim-snippets'
 " highlight enclosing tag
-if has('python') || has('python3')
-  Plug 'Valloric/MatchTagAlways'
-endif
+" if has('python') || has('python3')
+" MatchTagsAlways abandoned; consider tribhuwan-kumar/matchtags
+"   Plug 'Valloric/MatchTagAlways'
+" endif
 " highlight current term, :QuickhlManualAdd pattern
 Plug 't9md/vim-quickhl'
 " :A alt file :AS split :AN cycle :IH \ih cursor \is alt under cursor
